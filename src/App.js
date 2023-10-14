@@ -1,6 +1,6 @@
 
 import './App.css';
-//import UseEffectExample from './components/UseEffectExample';
+import UseEffectExample from './components/UseEffectExample';
 import NavbarComponent from './components/Navbar/NavbarComponent';
 function App() {
   return (
