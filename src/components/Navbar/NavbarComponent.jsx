@@ -1,8 +1,8 @@
-import Logo from './Logo';
+import Logos from './Logos';
 const NavbarComponent = () => {
     return (
         <div>
-            <Logo />
+            <Logos />
         </div>
     )
 }

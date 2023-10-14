@@ -1,4 +1,4 @@
-const Logo=()=>{
+const Logos=()=>{
     return (
     <div>
         <h1>Home</h1>
@@ -6,4 +6,4 @@ const Logo=()=>{
     );
 }
 
-export default Logo;
+export default Logos;
