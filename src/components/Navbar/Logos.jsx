@@ -1,7 +1,7 @@
 const Logos=()=>{
     return (
     <div>
-        <h1>Home</h1>
+        <img src="http://localhost:3000/film-fusion/Tab_movie.svg" alt="logo" className="logo"/>
     </div>
     );
 }
