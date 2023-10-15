@@ -1,4 +1,7 @@
 import { useEffect } from 'react';
+import PopularMovies from './DefaultBodyComponents/PopularMovies';
+import TopRatedMovies from './DefaultBodyComponents/TopRatedMovies';
+import TopRatedTvShows from './DefaultBodyComponents/TopRatedTvShows';
 import styles from './../../../style/BodyStyles/BodyContent.module.css';
 const url = 'https://imdb8.p.rapidapi.com/auto-complete?q=game%20of%20thr';
 const options = {
@@ -8,7 +11,7 @@ const options = {
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
 };
-const TopMovies = () => {
+const DefaultBodyContent = () => {
 
     useEffect(() => {
             // fetch(url, options)
@@ -24,24 +27,18 @@ const TopMovies = () => {
         <>
         <div className={styles.popularMovies}>
             <div class={styles.Headline}>Popular Movies</div>
-            <div className={styles['popular-movie-container']}>
-
-            </div>
+            <PopularMovies />
         </div>
         <div className={styles.TopRatedMovies}>
             <div class={styles.Headline}>Top Rated Movies</div>
-            <div className={styles['toprated-movie-container']}>
-                
-            </div>
+            <TopRatedMovies />
         </div>
         <div className={styles.TopRatedTvShow}>
             <div class={styles.Headline}>Top Rated Tv Shows</div>
-            <div className={styles['toprated-tvshow-container']}>
-                
-            </div>
+            <TopRatedTvShows />
         </div>
         </>
     )
 }
 
-export default TopMovies;
+export default DefaultBodyContent;
