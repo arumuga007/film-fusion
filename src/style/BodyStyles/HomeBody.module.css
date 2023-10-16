@@ -1,0 +1,17 @@
+* {
+    padding: 0;
+    margin: 0;
+    color: white;
+    font-family: 'poppins';
+    overflow-x: hidden;
+}
+
+.homebody {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 40px;
+    width: 100%;
+    background: #101115;
+    gap: 25px;
+    min-height: 100vh;
+}
