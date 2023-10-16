@@ -18,7 +18,6 @@ const SideBar = () => {
             <div className={styles.sidebarHeadline}>Actor</div>
             <Link to='/topmovies'>Popular actors</Link>
             <Link to='/topmovies'>Born today</Link>
-
         </div>
     )
 }

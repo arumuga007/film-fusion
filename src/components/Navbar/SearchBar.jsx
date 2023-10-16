@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 const SearchBar=()=>{
     return (
         <div>
-            <input type="text" placeholder="Search for Movies"></input>
+            <Link to='/Search'><input type="text" placeholder="Search for Movies"></input></Link>
         </div>   
     )
 }

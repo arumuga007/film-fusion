@@ -5,10 +5,10 @@ import {BrowserRouter,Routes,Route}from 'react-router-dom';
 const NavbarComponent = () => {
     return (
        <BrowserRouter>
-            <Routes path='/'>
-                <Route path='Logos' element={<Logos />}></Route>
-                <Route path='SearchBar' element={<SearchBar />}></Route>
-                <Route path='Profile' element={<Profile />}></Route>
+            <Routes>
+                <Route path="/logos" element={<Logos />}></Route>
+                <Route path="/Search" element={<SearchBar />}></Route>
+                <Route path="/Profile" element={<Profile />}></Route>
             </Routes>
        </BrowserRouter>
     )
