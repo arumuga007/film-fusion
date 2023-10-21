@@ -83,3 +83,22 @@
         opacity: 1;
     }
 }
+
+.single-popular-movie-container {
+    max-height: 350px;
+    height: 85%;
+    width: 26%;
+    overflow: hidden;
+}
+
+.popular-movie-image-container {
+    height: 75%;
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.popular-movie-image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
