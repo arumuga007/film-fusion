@@ -1,21 +1,23 @@
 import { useEffect, useState } from "react";
 import styles from "./../../../../style/BodyStyles/BodyContent.module.css";
 const GetPopularMovies = (props) => {
+    const [render, setRender] = useState(0);
     const [movie, setMovie] = useState(false);
-    const url = `https://imdb8.p.rapidapi.com/title/get-details?tconst=${props.titleId}`;
+    const urls = `https://imdb8.p.rapidapi.com/title/get-details?tconst=${props.titleId}`;
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'd92540368emshd095ea53a9a4ad0p16931fjsn1572d4bc284b',
+		'X-RapidAPI-Key': 'fde34cd8f5msh88994d94fab9e68p18ea88jsn0096a040c9c4',
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
 };
     useEffect(() => {
         const timer = setTimeout(() => {
-            fetch(url, options)
+            fetch(urls, options)
             .then((response) => response.json())
             .then((data) => {
                 if(data.message) {
+                    setRender(render + 1);
                     return;
                 }
                 setMovie(data);
@@ -23,8 +25,8 @@ const options = {
             })
             .catch((error) => console.log(error))
             
-        }, 400);
-    }, [])
+        }, 1000);
+    }, [render])
 
     return (
         <>

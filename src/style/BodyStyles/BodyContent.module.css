@@ -26,14 +26,14 @@
 }
 
 .popular-movie-container, .toprated-tvshow-container, .toprated-movie-container {
-    min-height: 300px;
+    min-height: 350px;
     background: #19181E;
     display: grid;
     grid-auto-flow: column;
-    grid-auto-columns: 250px;
+    grid-auto-columns: 200px;
     padding-top: 10px;
     overflow: scroll;
-    gap: 20px;
+    gap: 30px;
     transition: all linear .2s;
 }
 .popular-movie-container::-webkit-scrollbar {
@@ -94,28 +94,33 @@
 }
 
 .single-popular-movie-container {
-    max-height: 350px;
+    max-height: auto;
     box-sizing: border-box;
-    height: 85%;
+    height: 95%;
     width: 100%;
-    background: red;
+    margin: auto 0px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
     transition: all linear .2s;
+    border-radius: 10px;
+    background: #101115;
 }
 
 .popular-movie-image-container {
+    max-height: 270px;
     box-sizing: border-box;
-    height: 75%;
+    height: 80%;
     width: 100%;
-    padding: 10px 10px;
     overflow: hidden;
     position: relative;
-    background-color: aqua;
 }
 
 .popular-movie-image {
     box-sizing: border-box;
     height: 100%;
     width: 100%;
+    border-radius: 10px;
     object-fit: cover;
 }
 
@@ -126,8 +131,8 @@
     font-size: 39px;
     font-weight: 900;
     top: 42%;
+    cursor: pointer;
 }
-
 .leftArrowContainer {
     position: absolute;
     left: 2%;
@@ -135,4 +140,12 @@
     font-size: 39px;
     font-weight: 900;
     top: 42%;
+    cursor: pointer;
+}
+.popular-name-rating-container {
+    height: 20%;
+}
+.popular-movie-title {
+    font-size: 1.3rem;
+    font-weight: 600;
 }
