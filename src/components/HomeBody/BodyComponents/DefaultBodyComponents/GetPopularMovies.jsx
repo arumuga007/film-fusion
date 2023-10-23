@@ -1,5 +1,15 @@
 import { useEffect, useState } from "react";
 import styles from "./../../../../style/BodyStyles/BodyContent.module.css";
+import DefaultSkeleton from "./DefaultSkeleton";
+const getSkeleton = () => {
+    console.log('skeleton called');
+    let itemsToReturn = [];
+    for(let i = 0; i < 10; i ++) {
+        itemsToReturn.push(<DefaultSkeleton />)
+    }
+    return itemsToReturn
+}
+
 const GetPopularMovies = (props) => {
     const [render, setRender] = useState(0);
     const [movie, setMovie] = useState(false);
@@ -7,7 +17,7 @@ const GetPopularMovies = (props) => {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'fde34cd8f5msh88994d94fab9e68p18ea88jsn0096a040c9c4',
+		'X-RapidAPI-Key': 'd92540368emshd095ea53a9a4ad0p16931fjsn1572d4bc284b',
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
 };
@@ -41,7 +51,7 @@ const options = {
             </div>
         </div>
         :
-        <div>nothing</div>
+        getSkeleton()
         }
         </>
     )

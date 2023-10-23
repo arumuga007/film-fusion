@@ -2,7 +2,7 @@ import styles from "./../../../../style/BodyStyles/BodyContent.module.css";
 import DefaultSkeleton from "./DefaultSkeleton";
 const getSkeleton = () => {
     let itemsToReturn = [];
-    for(let i = 0; i < 3; i ++) {
+    for(let i = 0; i < 10; i ++) {
         itemsToReturn.push(<DefaultSkeleton />)
     }
     return itemsToReturn

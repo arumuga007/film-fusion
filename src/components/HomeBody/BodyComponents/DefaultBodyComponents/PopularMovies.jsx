@@ -2,13 +2,14 @@ import styles from "./../../../../style/BodyStyles/BodyContent.module.css";
 import DefaultSkeleton from './DefaultSkeleton';
 import { useState, useEffect, useRef } from "react";
 import GetPopularMovies from "./GetPopularMovies";
+import Arrow from "./Arrow";
 
 
 
 const getSkeleton = () => {
     console.log('skeleton called');
     let itemsToReturn = [];
-    for(let i = 0; i < 3; i ++) {
+    for(let i = 0; i < 10; i ++) {
         itemsToReturn.push(<DefaultSkeleton />)
     }
     return itemsToReturn
@@ -19,22 +20,11 @@ const url = 'https://imdb8.p.rapidapi.com/title/get-most-popular-movies?homeCoun
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'fde34cd8f5msh88994d94fab9e68p18ea88jsn0096a040c9c4',
+		'X-RapidAPI-Key': 'd92540368emshd095ea53a9a4ad0p16931fjsn1572d4bc284b',
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
 };
 
-const movieContainerScroll = () => {
-    let totalWidth = movieContainer.scrollLeft + movieContainer.clientWidth;
-    if(totalWidth + 10 >= movieContainer.scrollWidth)
-      rightArrow.current.style.display = 'none';
-    else
-      rightArrow.current.style.display = 'block';
-    if(movieContainer.scrollLeft > 0)
-        leftArrow.current.style.display = 'block';
-    else 
-        leftArrow.current.style.display = 'none';
-}
 
 const moveMovies = () => {
     leftValue = movieContainer.scrollLeft + 270;
@@ -52,10 +42,8 @@ const moveMoviesLeft = () => {
         behavior: "smooth"
       });
 }
-
+    const parentRef = useRef();
     const [popularMovies, setPopularMovies] = useState(false);
-    const rightArrow = useRef();
-    const leftArrow = useRef();
     let movieContainer = null;
     let movies = [];
     let leftValue = 0;
@@ -72,30 +60,16 @@ const moveMoviesLeft = () => {
             console.log(error);
         })
         movieContainer = document.querySelector('#movieContainer');
-        movieContainer.addEventListener('scroll', movieContainerScroll);
-        leftArrow.current.style.display = 'none';
-        rightArrow.current.addEventListener('click', moveMovies);
-        leftArrow.current.addEventListener('click', moveMoviesLeft);
-
-        return () => {
-            rightArrow.current.removeEventListener('click', moveMovies);
-            leftArrow.current.removeEventListener('click', moveMoviesLeft);
-        }
     }, []);
     return (
-        <div className={styles['popular-movie-container']} id='movieContainer'>
-            <div className={styles.rightArrowContainer}>
-                <i class="fa fa-angle-right" ref={rightArrow} ></i>
-            </div>
-            <div className={styles.leftArrowContainer}>
-                <i class="fa fa-angle-left" ref={leftArrow} className={styles.leftArrow}></i>
-            </div>
+        <div className={styles['popular-movie-container']} id='movieContainer' ref={parentRef}>
             {popularMovies ?
             popularMovies.map((movieTitle) => {
                     let titleId = movieTitle.split('/')[2];
                     return <GetPopularMovies titleId={titleId}/>
             })
             : getSkeleton()}
+            <Arrow moveMovies={moveMovies} moveMoviesLeft={moveMoviesLeft} movieContainer={parentRef}/>
         </div>
     )
 }
