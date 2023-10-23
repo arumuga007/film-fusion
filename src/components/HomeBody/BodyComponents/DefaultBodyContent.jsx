@@ -30,14 +30,14 @@ const DefaultBodyContent = () => {
             <div class={styles.Headline}>Popular Movies</div>
             <PopularMovies />
         </div>
-        <div className={styles.TopRatedMovies}>
+        {/* <div className={styles.TopRatedMovies}>
             <div class={styles.Headline}>Top Rated Movies</div>
             <TopRatedMovies />
         </div>
         <div className={styles.TopRatedTvShow}>
             <div class={styles.Headline}>Top Rated Tv Shows</div>
             <TopRatedTvShows />
-        </div>
+        </div> */}
         </>
     )
 }

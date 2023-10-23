@@ -36,7 +36,7 @@
     gap: 30px;
     transition: all linear .2s;
 }
-.popular-movie-container::-webkit-scrollbar {
+.popular-movie-container::-webkit-scrollbar, .toprated-tvshow-container::-webkit-scrollbar, .toprated-movie-container::-webkit-scrollbar {
     width: 0;
     height: 0;
   }

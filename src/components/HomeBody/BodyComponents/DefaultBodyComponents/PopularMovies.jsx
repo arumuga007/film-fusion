@@ -15,12 +15,11 @@ const getSkeleton = () => {
     return itemsToReturn
 }
 const PopularMovies = () => {
-    console.log('popular movies rendered');
 const url = 'https://imdb8.p.rapidapi.com/title/get-most-popular-movies?homeCountry=US&purchaseCountry=US&currentCountry=US';
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'd92540368emshd095ea53a9a4ad0p16931fjsn1572d4bc284b',
+		'X-RapidAPI-Key': 'f205f3410dmsh190cd8919f9a65ap1376ebjsnd9169a12b50e',
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
 };
@@ -44,23 +43,27 @@ const moveMoviesLeft = () => {
 }
     const parentRef = useRef();
     const [popularMovies, setPopularMovies] = useState(false);
+    const [datafetched, setDataFetched] = useState(0);
     let movieContainer = null;
     let movies = [];
     let leftValue = 0;
     useEffect(() => {
-        fetch(url, options)
-        .then((response) => {
-            return response.json();
-        })
-        .then((data) => {
-            movies = data.slice(0, 10);
-            setPopularMovies(movies);
-        })
-        .catch((error) => {
-            console.log(error);
-        })
-        movieContainer = document.querySelector('#movieContainer');
-    }, []);
+        setTimeout(() => {
+            fetch(url, options)
+            .then((response) => {
+                return response.json();
+            })
+            .then((data) => {
+                console.log(data);
+                movies = data.slice(0, 10);
+                setPopularMovies(movies);
+            })
+            .catch((error) => {
+                console.log(error);
+                setDataFetched(datafetched + 1);
+            })
+        }, 1000)
+    }, [datafetched]);
     return (
         <div className={styles['popular-movie-container']} id='movieContainer' ref={parentRef}>
             {popularMovies ?

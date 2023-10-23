@@ -1,19 +1,11 @@
+import { useState } from "react";
 import styles from "./../../../../style/BodyStyles/BodyContent.module.css";
 import DefaultSkeleton from "./DefaultSkeleton";
-
-const getSkeleton = () => {
-    let itemsToReturn = [];
-    for(let i = 0; i < 3; i ++) {
-        itemsToReturn.push(<DefaultSkeleton />)
-    }
-    return itemsToReturn
-}
-
+import MovieContainerTemplate from "./MovieContainerTemplate";
+let url = 'https://imdb8.p.rapidapi.com/title/get-top-rated-tv-shows';
 const TopRatedTvShows = () => {
     return (
-        <div className={styles['toprated-tvshow-container']}>
-            {getSkeleton()}               
-        </div>
+        <MovieContainerTemplate url={url} className='toprated-tvshow-container' type='topRatedTvShows'/>
     )
 }
 

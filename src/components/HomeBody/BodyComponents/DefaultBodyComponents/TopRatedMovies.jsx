@@ -1,18 +1,7 @@
-import styles from "./../../../../style/BodyStyles/BodyContent.module.css";
-import DefaultSkeleton from "./DefaultSkeleton";
-const getSkeleton = () => {
-    let itemsToReturn = [];
-    for(let i = 0; i < 10; i ++) {
-        itemsToReturn.push(<DefaultSkeleton />)
-    }
-    return itemsToReturn
-}
+import MovieContainerTemplate from "./MovieContainerTemplate";
 const TopRatedMovies = () => {
-    return (
-        <div className={styles['toprated-movie-container']}>
-             {getSkeleton()}   
-        </div>
-    )
+    let url = 'https://imdb8.p.rapidapi.com/title/get-top-rated-movies';
+    return(<MovieContainerTemplate url={url} className='toprated-movie-container' type='topRatedTvShows'/>)
 }
 
 export default TopRatedMovies;
