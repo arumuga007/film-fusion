@@ -10,12 +10,14 @@
 
 .popularMovies, .TopRatedMovies, .TopRatedTvShow {
     width: 100%;
+    box-sizing: border-box;
     padding: 10px 10px;
     background: #101115;
     padding: 10px 10px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: relative;
 }
 
 .Headline {
@@ -26,15 +28,22 @@
 .popular-movie-container, .toprated-tvshow-container, .toprated-movie-container {
     min-height: 300px;
     background: #19181E;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 250px;
     padding-top: 10px;
+    overflow: scroll;
+    gap: 20px;
+    transition: all linear .2s;
 }
-
+.popular-movie-container::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 .skeletonContainer {
+    box-sizing: border-box;
     height: 85%;
-    width: 26%;
+    width: 100%;
     background: #19181E;
     padding: 20px 10px;
     display: flex;
@@ -86,19 +95,44 @@
 
 .single-popular-movie-container {
     max-height: 350px;
+    box-sizing: border-box;
     height: 85%;
-    width: 26%;
-    overflow: hidden;
+    width: 100%;
+    background: red;
+    transition: all linear .2s;
 }
 
 .popular-movie-image-container {
+    box-sizing: border-box;
     height: 75%;
     width: 100%;
     padding: 10px 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: aqua;
 }
 
 .popular-movie-image {
+    box-sizing: border-box;
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.rightArrowContainer {
+    position: absolute;
+    right: 2%;
+    z-index: 10;
+    font-size: 39px;
+    font-weight: 900;
+    top: 42%;
+}
+
+.leftArrowContainer {
+    position: absolute;
+    left: 2%;
+    z-index: 10;
+    font-size: 39px;
+    font-weight: 900;
+    top: 42%;
 }

@@ -26,6 +26,7 @@ const DefaultBodyContent = () => {
     return (
         <>
         <div className={styles.popularMovies}>
+        
             <div class={styles.Headline}>Popular Movies</div>
             <PopularMovies />
         </div>

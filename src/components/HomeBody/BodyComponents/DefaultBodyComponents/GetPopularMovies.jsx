@@ -6,7 +6,7 @@ const GetPopularMovies = (props) => {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'f205f3410dmsh190cd8919f9a65ap1376ebjsnd9169a12b50e',
+		'X-RapidAPI-Key': 'd92540368emshd095ea53a9a4ad0p16931fjsn1572d4bc284b',
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
 };

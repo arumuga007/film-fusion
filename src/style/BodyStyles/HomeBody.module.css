@@ -4,6 +4,12 @@
     color: white;
     font-family: 'poppins';
     overflow-x: hidden;
+    
+}
+
+body {
+    overscroll-behavior-inline: contain;
+    overscroll-behavior: contain;
 }
 
 .homebody {
@@ -14,4 +20,6 @@
     background: #101115;
     gap: 25px;
     min-height: 100vh;
+    overscroll-behavior-inline: contain;
+    overscroll-behavior: contain;
 }
