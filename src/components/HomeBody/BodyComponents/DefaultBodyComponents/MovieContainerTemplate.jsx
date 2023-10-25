@@ -15,14 +15,14 @@ const getskeleton = () => {
 
 const MovieContainerTemplate = (props) => {
     let leftValue = 0;
-    let movieContainer = null;
+    let timeOut = 0;
     let parentReference = useRef();
     const [movies, setMovies] = useState(false);
     const [moviefetched, setMovieFetched] = useState(0);
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': 'f205f3410dmsh190cd8919f9a65ap1376ebjsnd9169a12b50e',
+            'X-RapidAPI-Key': props.apikey,
             'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
         }
     };
@@ -37,7 +37,7 @@ const MovieContainerTemplate = (props) => {
             console.log('error occured during fetching a data in moviecontainertemplate');
             setMovieFetched(moviefetched + 1);
             });
-        }, 5000);
+        }, 1000);
     }, [moviefetched]);
 
     const moveMovies = () => {
@@ -63,7 +63,8 @@ const MovieContainerTemplate = (props) => {
              ?
              movies.map((movieTitle) => {
                 let titleId = movieTitle.id.split('/')[2];
-                return <GetPopularMovies titleId={titleId}/>
+                timeOut += 300;
+                return <GetPopularMovies titleId={titleId} apikey={props.apikey} timeOut={timeOut} />
         })
             : getskeleton()
             }

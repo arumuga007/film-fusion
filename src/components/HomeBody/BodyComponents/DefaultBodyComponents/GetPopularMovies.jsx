@@ -17,7 +17,7 @@ const GetPopularMovies = (props) => {
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'd92540368emshd095ea53a9a4ad0p16931fjsn1572d4bc284b',
+		'X-RapidAPI-Key': props.apikey,
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
 };
@@ -27,6 +27,7 @@ const options = {
             .then((response) => response.json())
             .then((data) => {
                 if(data.message) {
+                    console.log(data.message);
                     setRender(render + 1);
                     return;
                 }
@@ -35,7 +36,7 @@ const options = {
             })
             .catch((error) => console.log(error))
             
-        }, 1000);
+        }, props.timeOut);
     }, [render])
 
     return (

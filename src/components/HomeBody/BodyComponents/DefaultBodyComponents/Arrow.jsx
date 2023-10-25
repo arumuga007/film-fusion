@@ -5,7 +5,7 @@ const Arrow = (props) => {
     const rightArrow = useRef();
     const leftArrow = useRef();
 
-    const movieContainerScroll = () => {
+    const movieContainerScroll = (event) => {
         let totalWidth = props.movieContainer.current.scrollLeft + props.movieContainer.current.clientWidth;
         if(totalWidth + 10 >= props.movieContainer.current.scrollWidth)
           rightArrow.current.style.display = 'none';

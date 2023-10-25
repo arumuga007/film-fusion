@@ -15,19 +15,20 @@ const getSkeleton = () => {
     return itemsToReturn
 }
 const PopularMovies = () => {
+let apikey = 'ab9812db4emshea295be64618310p18f90ejsn0399c2bad76e';
 const url = 'https://imdb8.p.rapidapi.com/title/get-most-popular-movies?homeCountry=US&purchaseCountry=US&currentCountry=US';
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'f205f3410dmsh190cd8919f9a65ap1376ebjsnd9169a12b50e',
+		'X-RapidAPI-Key': 'ab9812db4emshea295be64618310p18f90ejsn0399c2bad76e',
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
 };
 
 
 const moveMovies = () => {
-    leftValue = movieContainer.scrollLeft + 270;
-    movieContainer.scrollTo({
+    leftValue = parentRef.current.scrollLeft + 270;
+    parentRef.current.scrollTo({
         left: leftValue,
         behavior: "smooth"
       });
@@ -35,8 +36,8 @@ const moveMovies = () => {
 }
 
 const moveMoviesLeft = () => {
-    leftValue = movieContainer.scrollLeft - 270;
-    movieContainer.scrollTo({
+    leftValue = parentRef.current.scrollLeft - 270;
+    parentRef.current.scrollTo({
         left: leftValue,
         behavior: "smooth"
       });
@@ -44,8 +45,8 @@ const moveMoviesLeft = () => {
     const parentRef = useRef();
     const [popularMovies, setPopularMovies] = useState(false);
     const [datafetched, setDataFetched] = useState(0);
-    let movieContainer = null;
     let movies = [];
+    let timeOut = 0;
     let leftValue = 0;
     useEffect(() => {
         setTimeout(() => {
@@ -54,8 +55,8 @@ const moveMoviesLeft = () => {
                 return response.json();
             })
             .then((data) => {
-                console.log(data);
                 movies = data.slice(0, 10);
+                console.log(movies);
                 setPopularMovies(movies);
             })
             .catch((error) => {
@@ -69,7 +70,8 @@ const moveMoviesLeft = () => {
             {popularMovies ?
             popularMovies.map((movieTitle) => {
                     let titleId = movieTitle.split('/')[2];
-                    return <GetPopularMovies titleId={titleId}/>
+                    timeOut += 300;
+                    return <GetPopularMovies titleId={titleId} apikey={apikey} timeOut={timeOut} />
             })
             : getSkeleton()}
             <Arrow moveMovies={moveMovies} moveMoviesLeft={moveMoviesLeft} movieContainer={parentRef}/>
