@@ -6,7 +6,7 @@ import UpcomingMoviesSkeleton from './SubBody/UpcomingMoviesSkeleton';
 export const getUpcomingMoviesSkeleton = () => {
     let itemsToReturn = [];
     for(let i = 0; i < 4; i++) {
-        itemsToReturn.push(<UpcomingMoviesSkeleton />);
+        itemsToReturn.push(<UpcomingMoviesSkeleton key={i} />);
     }
     return itemsToReturn;
 }
@@ -38,10 +38,10 @@ const SubBody = () => {
             <div className={styles.upcomingMoviesHeader}>Upcoming Movies</div>
             {
                 upcomingMovie
-                ? upcomingMovie.map((movieTitle) => {
+                ? upcomingMovie.map((movieTitle, index) => {
                     timeOut += 500;
                     let title = movieTitle.id.split('/')[2];
-                    return <UpcomingMovies title={title} releaseDate={movieTitle.releaseDate} timeOut={timeOut} />
+                    return <UpcomingMovies title={title} releaseDate={movieTitle.releaseDate} timeOut={timeOut} key={index}/>
                 })
                 : getUpcomingMoviesSkeleton()
             }

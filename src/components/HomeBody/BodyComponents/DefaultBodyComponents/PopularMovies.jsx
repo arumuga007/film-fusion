@@ -10,7 +10,7 @@ const getSkeleton = () => {
     console.log('skeleton called');
     let itemsToReturn = [];
     for(let i = 0; i < 10; i ++) {
-        itemsToReturn.push(<DefaultSkeleton />)
+        itemsToReturn.push(<DefaultSkeleton key={i}/>)
     }
     return itemsToReturn
 }
@@ -68,10 +68,10 @@ const moveMoviesLeft = () => {
     return (
         <div className={styles['popular-movie-container']} id='movieContainer' ref={parentRef}>
             {popularMovies ?
-            popularMovies.map((movieTitle) => {
+            popularMovies.map((movieTitle, index) => {
                     let titleId = movieTitle.split('/')[2];
                     timeOut += 300;
-                    return <GetPopularMovies titleId={titleId} apikey={apikey} timeOut={timeOut} />
+                    return <GetPopularMovies titleId={titleId} apikey={apikey} timeOut={timeOut} key={index} />
             })
             : getSkeleton()}
             <Arrow moveMovies={moveMovies} moveMoviesLeft={moveMoviesLeft} movieContainer={parentRef}/>

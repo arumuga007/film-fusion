@@ -5,7 +5,7 @@ const getSkeleton = () => {
     console.log('skeleton called');
     let itemsToReturn = [];
     for(let i = 0; i < 10; i ++) {
-        itemsToReturn.push(<DefaultSkeleton />)
+        itemsToReturn.push(<DefaultSkeleton key={i}/>)
     }
     return itemsToReturn
 }

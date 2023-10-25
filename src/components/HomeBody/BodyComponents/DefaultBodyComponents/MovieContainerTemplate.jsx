@@ -8,7 +8,7 @@ const getskeleton = () => {
     console.log('skeleton called');
     let itemsToReturn = [];
     for(let i = 0; i < 10; i ++) {
-        itemsToReturn.push(<DefaultSkeleton />)
+        itemsToReturn.push(<DefaultSkeleton key={i} />)
     }
     return itemsToReturn
 }
@@ -61,10 +61,10 @@ const MovieContainerTemplate = (props) => {
         <div className={styles[props.className]} id="movieContainers" ref={parentReference}>
             {movies 
              ?
-             movies.map((movieTitle) => {
+             movies.map((movieTitle, index) => {
                 let titleId = movieTitle.id.split('/')[2];
                 timeOut += 300;
-                return <GetPopularMovies titleId={titleId} apikey={props.apikey} timeOut={timeOut} />
+                return <GetPopularMovies titleId={titleId} apikey={props.apikey} timeOut={timeOut} key={index} />
         })
             : getskeleton()
             }
