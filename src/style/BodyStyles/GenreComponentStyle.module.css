@@ -48,3 +48,36 @@
     width: 80%;
     background: #595959;
 }
+
+.single-movie-container {
+    box-sizing: border-box;
+    width: 30%;
+    margin-top: 20px;
+    background: #19181E;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 1%;
+    border-radius: 10px;
+}
+.image-container {
+    height: 250px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+.image {
+    max-height: auto;
+    max-width: auto;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.name {
+    overflow: hidden;
+    font-size: 21px;
+    line-height: 25px;
+}

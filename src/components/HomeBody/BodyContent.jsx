@@ -12,7 +12,15 @@ const BodyContent = () => {
     <div className={styles.bodyContentContainer}>
       <Routes>
         <Route path="/toprated" element={<TopRated />} />
-        <Route path="/action-movies" element={<GetMovies />} />
+        <Route path="/action-movies" element={<GetMovies category={"action"} key='action'/>} />
+        <Route path="/horror-movies" element={<GetMovies category={"horror"} key='horror' />} />
+        <Route path="/comedy-movies" element={<GetMovies category={"comedy"} key='comedy' />} />
+        <Route path="/crime-movies" element={<GetMovies category={"crime"} key='crime' />} />
+        <Route path="/drama-movies" element={<GetMovies category={"drama"} key='drama' />} />
+        <Route path="/history-movies" element={<GetMovies category={"history"} key='history' />} />
+        <Route path="/mystery-movies" element={<GetMovies category={"mystery"} key='mystery' />} />
+        <Route path="/romantic-movies" element={<GetMovies category={"romantic"} key='romantic' />} />
+        <Route path="/thriller-movies" element={<GetMovies category={"thriller"} key='thriller' />} />
         <Route path="/film-fusion" element={<DefaultBodyContent />} />
       </Routes>
       </div>

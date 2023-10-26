@@ -3,17 +3,17 @@ import styles from './../../../../style/BodyStyles/GenreComponentStyle.module.cs
 import GetSingleMovieById from './GetSingleMovieById';
 import Skeleton from './Skeleton';
 
-const getSkeleton = () => {
+export const getSkeleton = () => {
     let itemToReturn = []
     for(let i = 0; i < 12; i++)
         itemToReturn.push(<Skeleton key={i}/>);
     return itemToReturn;
 }
 
-const GetMovies = () => {
+const GetMovies = (props) => {
     let genreArray = window.location.href.split('/');
     let genre = genreArray[genreArray.length - 1].split('-')[0];
-    const url = `https://imdb8.p.rapidapi.com/title/v2/get-popular-movies-by-genre?genre=${genre}&limit=15`;
+    const url = `https://imdb8.p.rapidapi.com/title/v2/get-popular-movies-by-genre?genre=${props.category}&limit=7`;
     const options = {
         method: 'GET',
         headers: {
@@ -22,21 +22,25 @@ const GetMovies = () => {
         }
     };
     const [movies, setMovies] = useState(false);
-
-    // useEffect(() => {
-    //     fetch(url, options)
-    //     .then(response => response.json())
-    //     .then((data) => {
-    //         console.log(data);
-    //         setMovies(data);
-    //     })
-    // }, []);
+    let timeOut = 0;
+    useEffect(() => {
+        fetch(url, options)
+        .then(response => response.json())
+        .then((data) => {
+            console.log(data);
+            setMovies(data);
+        })
+    }, []);
 
     return(
         <div className={styles['get-movie-container']} >
         {
             movies
-            ? <GetSingleMovieById />
+            ? movies.map((movieTitle, index) => {
+                let title = movieTitle.split('/')[2];
+                timeOut += 350;
+                return <GetSingleMovieById title={title} url={url} options={options} timeOut={timeOut} key={index}/>
+            })
             : getSkeleton()
         }
         </div>
