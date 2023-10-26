@@ -5,7 +5,7 @@ const SideBar = () => {
     return (
         <div className={styles.sidebar}>
             <div className={styles.sidebarHeadline}>Genre</div>
-            <Link to='/toprated'>Action</Link>
+            <Link to='/action-movies'>Action</Link>
             <Link to='/topmovies'>Horror</Link>
             <Link to='/topmovies'>Comedy</Link>
             <Link to='/topmovies'>Crime</Link>
