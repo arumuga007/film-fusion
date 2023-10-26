@@ -18,11 +18,34 @@ const Arrow = (props) => {
     }
 
     useEffect(() => {
-        leftArrow.current.style.display = 'none';
-        rightArrow.current.addEventListener('click', props.moveMovies);
-        leftArrow.current.addEventListener('click', props.moveMoviesLeft);
-        props.movieContainer.current.addEventListener('scroll', movieContainerScroll);
-    },[]);
+        const rightArrowClickHandler = () => props.moveMovies();
+        const leftArrowClickHandler = () => props.moveMoviesLeft();
+        const movieContainerScrollHandler = movieContainerScroll;
+    
+        if (rightArrow.current) {
+            rightArrow.current.addEventListener('click', rightArrowClickHandler);
+        }
+        if (leftArrow.current) {
+            leftArrow.current.addEventListener('click', leftArrowClickHandler);
+        }
+        if (props.movieContainer.current) {
+            props.movieContainer.current.addEventListener('scroll', movieContainerScrollHandler);
+        }
+    
+        // Clean up event listeners when the component unmounts
+        return () => {
+            if (rightArrow.current) {
+                rightArrow.current.removeEventListener('click', rightArrowClickHandler);
+            }
+            if (leftArrow.current) {
+                leftArrow.current.removeEventListener('click', leftArrowClickHandler);
+            }
+            if (props.movieContainer.current) {
+                props.movieContainer.current.removeEventListener('scroll', movieContainerScrollHandler);
+            }
+        }
+    }, []);
+    
     return (
         <>
             <div className={styles.rightArrowContainer}>

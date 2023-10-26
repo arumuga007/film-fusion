@@ -27,8 +27,7 @@
     justify-content: space-between;
     margin-top: 40px;
     box-shadow: 0px 0px 4px 0px rgba(256, 256, 256, .2);
-    animation: animateSkeleton 1s linear infinite;
-    
+    animation: animateSkeleton 1s linear infinite;    
 }
 
 @keyframes animateSkeleton {
@@ -60,7 +59,7 @@
 .UpcomingMovieContainer {
     margin-top: 30px;
     align-self: center;
-    max-height: 300px;
+    height: auto;
     box-sizing: border-box;
     width: 90%;
     display: flex;
@@ -69,7 +68,7 @@
 }
 
 .upcoming-movie-image-container {
-    height: 70%;
+    height: 210px;
     width: 100%;
     box-sizing: border-box;
     overflow: hidden;
@@ -83,10 +82,12 @@
 }
 
 .upcoming-movie-title {
-    font-size: 20px;
+    overflow: hidden;
+    font-size: 1.2rem;
     font-weight: 550;
 }
 
 .release-date {
+    overflow: hidden;
     opacity: .7;
 }

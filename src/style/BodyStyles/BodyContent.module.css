@@ -34,6 +34,7 @@
     padding-top: 10px;
     overflow: scroll;
     gap: 30px;
+    justify-items: start;
     transition: all linear .2s;
 }
 .popular-movie-container::-webkit-scrollbar, .toprated-tvshow-container::-webkit-scrollbar, .toprated-movie-container::-webkit-scrollbar {
@@ -94,9 +95,8 @@
 }
 
 .single-popular-movie-container {
-    max-height: auto;
+    height: 100%;
     box-sizing: border-box;
-    height: 95%;
     width: 100%;
     margin: auto 0px;
     display: flex;
@@ -108,9 +108,8 @@
 }
 
 .popular-movie-image-container {
-    max-height: 270px;
+    height: 230px;
     box-sizing: border-box;
-    height: 80%;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -126,6 +125,7 @@
 
 .rightArrowContainer {
     position: absolute;
+    overflow: hidden;
     right: 2%;
     z-index: 10;
     font-size: 39px;
@@ -135,15 +135,13 @@
 }
 .leftArrowContainer {
     position: absolute;
+    overflow: hidden;
     left: 2%;
     z-index: 10;
     font-size: 39px;
     font-weight: 900;
     top: 42%;
     cursor: pointer;
-}
-.popular-name-rating-container {
-    min-height: 34%;
 }
 .popular-movie-title {
     font-size: 1.3rem;
