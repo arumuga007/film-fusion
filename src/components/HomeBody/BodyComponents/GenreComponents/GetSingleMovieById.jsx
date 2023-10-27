@@ -1,10 +1,23 @@
-import { useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 import styles from './../../../../style/BodyStyles/GenreComponentStyle.module.css';
 import { getSkeleton } from './GetMovies';
+import MovieDetails from '../../MovieDetails/MovieDetails';
+
+export const movieDetailsContext = createContext();
+export const useMyContext = () => useContext(movieDetailsContext);
 const GetSingleMovieById = (props) => {
     const [render, setRender] = useState(0);
     const [movie, setMovie] = useState(false);
-    const url = `https://imdb8.p.rapidapi.com/title/get-details?tconst=${props.title}`;
+    const [showMovie, setShowMovie] = useState(false);
+    const url = `https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=${props.title}&currentCountry=US`;
+
+    function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth" // This provides a smooth scrolling animation
+        });
+        setShowMovie(true);
+      }
     useEffect(() => {
         setTimeout(() => {
             fetch(url, props.options)
@@ -15,6 +28,7 @@ const GetSingleMovieById = (props) => {
                     setRender(render + 1);
                     return;
                 }
+                console.log(data);
                 setMovie(data);
             })
             .catch(err => console.log(err));
@@ -26,14 +40,19 @@ const GetSingleMovieById = (props) => {
         <>
         {
             movie ? 
-             <div className={styles['single-movie-container']} >
+             <div className={styles['single-movie-container']} onClick={() => scrollToTop()}>
                 <div className={styles['image-container']}>
-                    <img src={movie.image.url} className={styles.image} ></img>
+                    <img src={movie.title.image.url} className={styles.image} ></img>
                 </div>
-                <div className={styles.name}>{movie.title}</div>
+                <div className={styles.name}>{movie.title.title}</div>
+                
             </div>
             : getSkeleton()
+            
         }
+        <movieDetailsContext.Provider value={{movie, setShowMovie}}>
+            {showMovie && <MovieDetails />}
+        </movieDetailsContext.Provider>
         </>
     )
 }

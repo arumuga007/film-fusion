@@ -1,0 +1,19 @@
+.movie-details-container {
+    top: 0;
+    color: white;
+    position: absolute;
+    box-sizing: border-box;
+    left:0;
+    right: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #19181E;
+    display: flex;
+    flex-direction: column;
+    padding: 3% 3%;
+}
+.icon {
+    font-size: 30px;
+    cursor: pointer;
+    align-self: flex-end;
+}
