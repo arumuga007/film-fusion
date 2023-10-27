@@ -11,9 +11,51 @@
     display: flex;
     flex-direction: column;
     padding: 3% 3%;
+    transition: all linear .2s;
 }
 .icon {
     font-size: 30px;
     cursor: pointer;
     align-self: flex-end;
+    z-index: 10;
+}
+.showMovieContainer {
+    top: 0;
+}
+
+.movie-overview-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4%;
+    z-index: 10;
+}
+.image-container {
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.movie-floating-design {
+    position: absolute;
+    background: rgba(256,0,0, 0.6);
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 150px;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+    overflow: hidden;
+}
+.movie-floating-design img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
