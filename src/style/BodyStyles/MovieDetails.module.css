@@ -19,19 +19,15 @@
     align-self: flex-end;
     z-index: 10;
 }
-.showMovieContainer {
-    top: 0;
-}
-
 .movie-overview-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 4%;
     z-index: 10;
 }
 .image-container {
     height: 300px;
-    width: 100%;
+    width: 40%;
     overflow: hidden;
     z-index: 10;
 }
@@ -58,4 +54,31 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+.movie-info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    margin-top: auto;
+    margin-bottom: 2%;
+}
+.movie-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+.rating-container {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.movie-genre-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.rating-star {
+    color: yellow;
 }

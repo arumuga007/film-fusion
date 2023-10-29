@@ -1,7 +1,21 @@
 import styles from './../../../style/BodyStyles/MovieDetails.module.css';
 import { useMyContext } from '../BodyComponents/GenreComponents/GetSingleMovieById';
+
+const getRating = (ratingValue) => {
+    let itemToReturn = [];
+    for(let i = 0; i < 5; i++) {
+        if(ratingValue > 0)
+            itemToReturn.push(<i class="fa fa-star" style={{color: 'yellow'}} key={i}></i>)
+        else
+            itemToReturn.push(<i class="fa fa-star" key={i}></i>)
+        ratingValue -= 2;
+    }
+    return itemToReturn;
+}
+
 const MovieOverview = () => {
     const {movie} = useMyContext();
+    let movieRating = movie.ratings.rating;
     let noOfGenre = false;
     return(
         <>
@@ -12,8 +26,22 @@ const MovieOverview = () => {
             <div className={styles['movie-info-container']}>
                 <div className={styles['movie-title']}>{movie.title.title}</div>
                 <div className={styles['rating-container']}>
-                    <div className={styles['rating-value']}>{movie.ratings.rating}</div>
-                    <div>rating</div>
+                    <div className={styles['rating-value-container']}>
+                        <div className={styles['rating-value']}>{movie.ratings.rating}</div>
+                        <div className={styles['rating-text']}>
+                            rating
+                        </div>
+                    </div>
+                    <div className={styles['rating-star-container']}>
+                        <div className={styles['rating-star']}>
+                            {
+                                getRating(movie.ratings.rating)
+                            }
+                        </div>
+                        <div className={styles['rating-text']}>
+                            Grade now
+                        </div>
+                    </div>
                 </div>
                 <div className={styles['movie-genre-container']}>
                     {
