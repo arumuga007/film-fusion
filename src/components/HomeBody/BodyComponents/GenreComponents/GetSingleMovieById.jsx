@@ -10,6 +10,7 @@ const GetSingleMovieById = (props) => {
     const [movie, setMovie] = useState(false);
     const [showMovie, setShowMovie] = useState(false);
     const url = `https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=${props.title}&currentCountry=US`;
+    let titleId = props.title;
 
     function scrollToTop() {
         window.scrollTo({
@@ -50,7 +51,7 @@ const GetSingleMovieById = (props) => {
             : getSkeleton()
             
         }
-        <movieDetailsContext.Provider value={{movie, setShowMovie}}>
+        <movieDetailsContext.Provider value={{movie, setShowMovie, titleId}}>
             {showMovie && <MovieDetails />}
         </movieDetailsContext.Provider>
         </>

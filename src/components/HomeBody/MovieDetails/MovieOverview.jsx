@@ -20,23 +20,24 @@ const MovieOverview = () => {
     return(
         <>
         <div className={styles['movie-overview-container']}>
-            <div className={styles['image-container']}>
-                <img src={movie.title.image.url}></img>
+            <div className={styles['image-container']} style={{backgroundImage: `url(${movie.title.image.url})`}}>
+                
             </div>
             <div className={styles['movie-info-container']}>
                 <div className={styles['movie-title']}>{movie.title.title}</div>
                 <div className={styles['rating-container']}>
                     <div className={styles['rating-value-container']}>
                         <div className={styles['rating-value']}>{movie.ratings.rating}</div>
-                        <div className={styles['rating-text']}>
-                            rating
-                        </div>
-                    </div>
-                    <div className={styles['rating-star-container']}>
                         <div className={styles['rating-star']}>
                             {
                                 getRating(movie.ratings.rating)
                             }
+                        </div>
+
+                    </div>
+                    <div className={styles['rating-text-container']}>
+                    <div className={styles['rating-text']}>
+                            rating
                         </div>
                         <div className={styles['rating-text']}>
                             Grade now
