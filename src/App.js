@@ -1,11 +1,11 @@
 
 import HomeBody from './components/HomeBody/HomeBody';
+import Navbar from './components/Navbar/Navbar';
 //import UseEffectExample from './components/UseEffectExample';
-import NavbarComponent from './components/Navbar/NavbarComponent';
 function App() {
   return (
     <div className="App">
-      <NavbarComponent />
+      <Navbar />
       <HomeBody />
     </div>
   );

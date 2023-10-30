@@ -21,7 +21,6 @@ const BodyContent = () => {
         <Route path="/romantic-movies" element={<GetMovies category={"romantic"} key='romantic' />} />
         <Route path="/science-movies" element={<GetMovies category={"science"} key='science' />} />
         <Route path="/thriller-movies" element={<GetMovies category={"thriller"} key='thriller' />} />
-        <Route path="/film-fusion" element={<DefaultBodyContent />} />
       </Routes>
       </div>
       </BrowserRouter>

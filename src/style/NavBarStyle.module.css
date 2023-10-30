@@ -1,0 +1,70 @@
+.navbar-container {
+    height: 100px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0px 4%;
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+    background-color: black;
+    align-items: center;
+}
+
+.logo-container {
+    height: 80%;
+    width: 9%;
+    min-width: 50px;
+    overflow: hidden;
+    margin-right: 10%;
+}
+.logo {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.searchbar-container {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10px;
+}
+.searchbar {
+    padding-left: 3px;
+    width: 90%;
+    height: 50%;
+    outline: none;
+    border: 0px;
+    font-size: 1.2rem;
+    background-color: #19181E;
+}
+.icon-container{
+    font-size: 27px;
+    box-sizing: border-box;
+    padding-top: 5px;
+    align-self: center;
+    width: 10%;
+    text-align: center;
+    background-color: #19181E;
+}
+.menu-container {
+    height: 100%;
+    min-width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-container a {
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.profile-container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem !important;
+}

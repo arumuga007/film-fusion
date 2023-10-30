@@ -61,8 +61,9 @@ const Actor = () => {
             <div className={style['actor-details-container']} ref={parentReference}>
                 {actor
                     ? actor.map((actor, index) => {
+                        timeOut += 350;
                         let singleActor = actor.split('/')[2];
-                        return <GetActorDetails actorId={singleActor} options={options} />
+                        return <GetActorDetails actorId={singleActor} options={options} timeOut={timeOut} />
                     })
                     :getActorSkeleton()
                 }
