@@ -7,7 +7,10 @@ const GetActorDetails = (props) => {
     useEffect(() => {
         fetch(url, props.options)
         .then(res => res.json())
-        .then((data) => console.log(data))
+        .then((data) => {
+            console.log(data);
+            setActorDetails(data);
+        })
         .catch((err) => console.log('error occured in fetching a actor details for movie overview page', err))
     }, []);
     return(
@@ -15,7 +18,8 @@ const GetActorDetails = (props) => {
         {
             actorDetails ? 
                 <div className={style['single-actor-details']}>
-                actor details
+                    <div className={style['actor-image']} style={{background: `url(${actorDetails.image.url})`}}></div>
+                    <div className={style['actor-name']}>{actorDetails.name}</div>
                 </div>
             : getActorSkeleton()
         }
