@@ -1,6 +1,8 @@
+import styles from './../../style/UpcomingFeatures.module.css';
+
 const UpcomingFeatures = () => {
     return(
-        <div>
+        <div className={styles['upcoming-features']}>
             upcoming Features
         </div>
     )

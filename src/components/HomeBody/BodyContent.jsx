@@ -5,13 +5,13 @@ import styles from './../../style/BodyStyles/BodyContent.module.css';
 import GetMovies from './BodyComponents/GenreComponents/GetMovies';
 import MovieDetails from './MovieDetails/MovieDetails';
 const BodyContent = () => {
+  console.log('body content called');
   return (
     <>
-    <BrowserRouter>
     <SideBar />
     <div className={styles.bodyContentContainer}>
       <Routes>
-        <Route path="/action-movies" element={<GetMovies category={"action"} key='action'/>} />
+        <Route path="action-movies" element={<GetMovies category={"action"} key='action'/>} />
         <Route path="/horror-movies" element={<GetMovies category={"horror"} key='horror' />} />
         <Route path="/comedy-movies" element={<GetMovies category={"comedy"} key='comedy' />} />
         <Route path="/crime-movies" element={<GetMovies category={"crime"} key='crime' />} />
@@ -23,7 +23,6 @@ const BodyContent = () => {
         <Route path="/thriller-movies" element={<GetMovies category={"thriller"} key='thriller' />} />
       </Routes>
       </div>
-      </BrowserRouter>
     </>
   );
 };
