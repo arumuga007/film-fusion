@@ -3,11 +3,11 @@ import { useParams } from "react-router-dom";
 import { getSkeleton } from "../GenreComponents/GetMovies";
 import GetSingleMovieById from "../GenreComponents/GetSingleMovieById";
 import styles from './../../../../style/BodyStyles/GenreComponentStyle.module.css';
+import NoMatchFound from "./NoMatchFound";
 const SearchResult = () => {
     const {searchValue} = useParams();
-    console.log(searchValue);
-    console.log(useParams());
     const [titleIds, setTitleIds] = useState(false);
+    const [noResultFound, setNoResultFound] = useState(false);
     let timeOut = 0;
     const url = `https://imdb8.p.rapidapi.com/title/find?q=${searchValue}`;
 const options = {
@@ -23,10 +23,20 @@ const options = {
         fetch(url, options)
         .then((res) => res.json())
         .then((data) => {
-            console.log(data);
-            setTitleIds(data.results.slice(0, 4));
+            if(!data.results) {
+                setNoResultFound(true);
+                return;
+            }
+            setNoResultFound(false);
+            if(data.results.length >= 4)
+                setTitleIds(data.results.slice(0, 2));
+            else if(data.results)
+                setTitleIds(data.results);
         })
     }, [searchValue]);
+
+    if(noResultFound)
+        return <NoMatchFound />
 
     return(
         <div className={styles['get-movie-container']} >
@@ -34,7 +44,6 @@ const options = {
         ? titleIds.map((movieTitle, index) => {
             let title = movieTitle.id.split('/')[2];
             timeOut += 350;
-            console.log('title', title);
             if(title[0] == 't')
                 return <GetSingleMovieById title={title} url={url} options={options} timeOut={timeOut} key={index}/>
             else

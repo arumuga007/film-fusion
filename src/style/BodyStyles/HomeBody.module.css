@@ -19,7 +19,7 @@ body {
     width: 100%;
     background: #101115;
     gap: 25px;
-    min-height: 100vh;
+    min-height: 130vh;
     overscroll-behavior-inline: contain;
     overscroll-behavior: contain;
 }

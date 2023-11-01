@@ -27,7 +27,7 @@ const SearchBar = () => {
 
     return(
         <div className={styles['searchbar-container']} >
-            <input type="text" className={styles.searchbar} placeholder='Search any movies or actors' ref={inputElement} onKeyUp={(event) => searchUsingEnter(event)}></input>
+            <input type="text" className={styles.searchbar} placeholder='Search any movies or actors' ref={inputElement} onKeyUp={(event) => searchUsingEnter(event)} onChange={(event) => setInputValue(event.target.value)}></input>
             <div className={styles['icon-container']} onClick={search} ref={iconContainer}>
             <i class="fa fa-search" aria-hidden="true"></i>
             </div>
