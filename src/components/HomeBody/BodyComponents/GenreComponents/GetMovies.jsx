@@ -11,8 +11,6 @@ export const getSkeleton = () => {
 }
 
 const GetMovies = (props) => {
-    let genreArray = window.location.href.split('/');
-    let genre = genreArray[genreArray.length - 1].split('-')[0];
     const url = `https://imdb8.p.rapidapi.com/title/v2/get-popular-movies-by-genre?genre=${props.category}&limit=7`;
     const options = {
         method: 'GET',

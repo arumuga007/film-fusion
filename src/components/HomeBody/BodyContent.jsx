@@ -4,6 +4,7 @@ import SideBar from './SideBar';
 import styles from './../../style/BodyStyles/BodyContent.module.css';
 import GetMovies from './BodyComponents/GenreComponents/GetMovies';
 import MovieDetails from './MovieDetails/MovieDetails';
+import SearchResult from './BodyComponents/SearchResult/SearchResult';
 const BodyContent = () => {
   console.log('body content called');
   return (
@@ -21,6 +22,7 @@ const BodyContent = () => {
         <Route path="/romantic-movies" element={<GetMovies category={"romantic"} key='romantic' />} />
         <Route path="/science-movies" element={<GetMovies category={"science"} key='science' />} />
         <Route path="/thriller-movies" element={<GetMovies category={"thriller"} key='thriller' />} />
+        <Route path='/search-movie/:searchValue' element={<SearchResult />} key='search-result' />
       </Routes>
       </div>
     </>
