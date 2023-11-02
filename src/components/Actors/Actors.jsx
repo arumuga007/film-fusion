@@ -5,7 +5,6 @@ import styles from './../../style/BodyStyles/GenreComponentStyle.module.css';
 import GetActor from "./GetActor";
 
 const Actors = (props) => {
-    let url = '';
     const options = {
         method: 'GET',
         headers: {
@@ -14,27 +13,36 @@ const Actors = (props) => {
         }
     };
     let timeOut = 0;
-    const [actors, setActors] = useState(false);
-    if(props.type == 'popularActors')
-        url = 'https://imdb8.p.rapidapi.com/actors/list-most-popular-celebs?homeCountry=IN&currentCountry=IN&purchaseCountry=IN';
-    else
-        url = 'https://imdb8.p.rapidapi.com/actors/list-born-today';
+    const [actors, setActors] = useState(null); // Use null as initial state
 
     useEffect(() => {
-        fetch(url, options)
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-            setActors(data.slice(0, 1));
-        })
-        .catch((err) => console.log('error occured in execution', err))
-    }, []);
+        let url = ''; // Initialize the URL variable
 
-    return(
+        if (props.type === 'popularActors') {
+            url = 'https://imdb8.p.rapidapi.com/actors/list-most-popular-celebs?homeCountry=IN&currentCountry=IN&purchaseCountry=IN';
+            console.log('popular actors called');
+        } else {
+            const date = new Date();
+            url = `https://imdb8.p.rapidapi.com/actors/list-born-today?month=${date.getMonth() + 1}&day=${date.getDate()}`;
+            console.log('born today actors called');
+        }
+        setActors(false);
+        fetch(url, options)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setActors(data.slice(0, 4));
+                console.log(actors);
+            })
+            .catch((err) => console.log('error occurred in execution', err));
+    }, [props.type]);
+
+    return (
         <div className={styles['get-movie-container']} >
             {
                 actors
                 ? actors.map((movieTitle, index) => {
+                    console.log('actors', actors);
                     let actorId = movieTitle.split('/')[2];
                     timeOut += 350;
                     return <GetActor actorId={actorId} options={options} timeOut={timeOut} key={index}/>

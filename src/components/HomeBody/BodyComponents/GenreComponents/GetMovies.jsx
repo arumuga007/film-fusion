@@ -21,14 +21,14 @@ const GetMovies = (props) => {
     };
     const [movies, setMovies] = useState(false);
     let timeOut = 0;
-    // useEffect(() => {
-    //     fetch(url, options)
-    //     .then(response => response.json())
-    //     .then((data) => {
-    //         console.log(data);
-    //         setMovies(data);
-    //     })
-    // }, []);
+    useEffect(() => {
+        fetch(url, options)
+        .then(response => response.json())
+        .then((data) => {
+            console.log(data);
+        setMovies(data);
+        })
+    }, []);
 
     return(
         <div className={styles['get-movie-container']} >

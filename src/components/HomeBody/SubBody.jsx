@@ -18,7 +18,7 @@ const SubBody = () => {
     const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '1f56e93584mshececd60fb33af54p119ec4jsn3077292436e3',
+		'X-RapidAPI-Key': '59689d85b6msh26ad0cac83f8cb3p1c0870jsn5b6b9821a000',
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
 };

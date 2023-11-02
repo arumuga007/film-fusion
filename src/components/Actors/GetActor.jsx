@@ -5,12 +5,14 @@ const GetActor = (props) => {
     let url = `https://imdb8.p.rapidapi.com/actors/get-bio?nconst=${props.actorId}`;
     const [actorDetail, setActorDetail] = useState(false);
     useEffect(() => {
-        fetch(url, props.options)
-        .then((res) => res.json())
-        .then((data) => {
-            console.log(data);
-            setActorDetail(data);
-        })
+        setTimeout(() => {
+            fetch(url, props.options)
+            .then((res) => res.json())
+            .then((data) => {
+                console.log(data);
+                setActorDetail(data);
+            })
+        }, props.timeOut)
         
     }, []);
     return(
