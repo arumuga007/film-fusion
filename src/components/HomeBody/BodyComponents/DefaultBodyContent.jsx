@@ -5,7 +5,7 @@ import styles from './../../../style/BodyStyles/BodyContent.module.css';
 const DefaultBodyContent = () => {
     return (
         <>
-        {/* <div className={styles.popularMovies}>
+        <div className={styles.popularMovies}>
         
             <div className={styles.Headline}>Popular Movies</div>
             <PopularMovies />
@@ -17,7 +17,7 @@ const DefaultBodyContent = () => {
         <div className={styles.TopRatedTvShow}>
             <div className={styles.Headline}>Top Rated Tv Shows</div>
             <TopRatedTvShows />
-        </div> */}
+        </div>
         </>
     )
 }

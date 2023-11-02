@@ -13,14 +13,6 @@ const UpcomingMovies = (props) => {
         }
     };
     useEffect(() => {
-        // fetch(url, options)
-        // .then(response => response.json())
-        // .then((data) => {
-        //     setUpcomingMovie(data);
-        // })
-        // .catch((error) => {
-        //     console.log('error occured while getting a upcoming movies', error);
-        // })
         setTimeout(() => {
             const fetchData = async () => {
                 try {

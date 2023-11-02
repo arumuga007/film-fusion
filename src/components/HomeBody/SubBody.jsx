@@ -26,6 +26,7 @@ const SubBody = () => {
         fetch(url, options)
         .then(response => response.json())
         .then((data) => {
+            console.log(data);
             setUpcomingMovie(data.slice(0,5));
         })
         .catch((error) => {

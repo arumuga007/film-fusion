@@ -16,8 +16,8 @@ const SideBar = () => {
             <Link to='/film-fusion/science-movies'>Science</Link>
             <Link to='/film-fusion/thriller-movies'>Thriller</Link>
             <div className={styles.sidebarHeadline}>Actor</div>
-            <Link to='/topmovies'>Popular actors</Link>
-            <Link to='/topmovies'>Born today</Link>
+            <Link to='/film-fusion/popular-actors'>Popular actors</Link>
+            <Link to='/film-fusion/born-today-actors'>Born today</Link>
 
         </div>
     )

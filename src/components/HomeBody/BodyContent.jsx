@@ -5,6 +5,10 @@ import styles from './../../style/BodyStyles/BodyContent.module.css';
 import GetMovies from './BodyComponents/GenreComponents/GetMovies';
 import MovieDetails from './MovieDetails/MovieDetails';
 import SearchResult from './BodyComponents/SearchResult/SearchResult';
+import PopularActors from '../Actors/PopularActors';
+import BornTodayActors from '../Actors/BornTodayActors';
+import Actor from './MovieDetails/Actor';
+import Actors from '../Actors/Actors';
 const BodyContent = () => {
   console.log('body content called');
   return (
@@ -12,6 +16,7 @@ const BodyContent = () => {
     <SideBar />
     <div className={styles.bodyContentContainer}>
       <Routes>
+        {/* <Route path="/" element={<DefaultBodyContent/>} /> */}
         <Route path="action-movies" element={<GetMovies category={"action"} key='action'/>} />
         <Route path="/horror-movies" element={<GetMovies category={"horror"} key='horror' />} />
         <Route path="/comedy-movies" element={<GetMovies category={"comedy"} key='comedy' />} />
@@ -23,6 +28,8 @@ const BodyContent = () => {
         <Route path="/science-movies" element={<GetMovies category={"science"} key='science' />} />
         <Route path="/thriller-movies" element={<GetMovies category={"thriller"} key='thriller' />} />
         <Route path='/search-movie/:searchValue' element={<SearchResult />} key='search-result' />
+        <Route path='/popular-actors' element = {<Actors type={'popularActors'} />} key='popularActors' />
+        <Route path='/born-today-actors' element = {<Actors type={'bornTodayActors'} />} key='bornTodayActors' />
       </Routes>
       </div>
     </>
