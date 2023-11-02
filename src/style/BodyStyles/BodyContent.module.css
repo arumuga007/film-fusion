@@ -19,6 +19,7 @@
     position: relative;
     box-sizing: border-box;
     overflow: hidden;
+    transition: all linear .3s;
 }
 
 .popularMovies, .TopRatedMovies, .TopRatedTvShow {
