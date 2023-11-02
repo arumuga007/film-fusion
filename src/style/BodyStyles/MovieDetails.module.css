@@ -38,6 +38,7 @@
 }
 .image-container {
   width: 40%;
+  max-width: 250px !important;
   height: 300px;
   margin: 2px;
   position: relative;
@@ -84,6 +85,10 @@
 .movie-title {
     font-size: 1.6rem;
     font-weight: 600;
+}
+.actor-sub-title {
+    color: #FFD700;
+    font-size: 1.1rem;
 }
 .rating-container {
     display: flex;
@@ -233,4 +238,24 @@
 
 .actor-name {
     font-size: 1.4rem;
+}
+
+/*actor details page css starts from here*/
+
+.movie-info-container span {
+    opacity: .8;
+}
+
+.dob-location-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10%;
+}
+
+.dob-container, .location-container {
+    display: flex;
+    gap: 10px;
+    padding: 10px 17px;
+    background: gray;
+    border-radius: 20px;
 }

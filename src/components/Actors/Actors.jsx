@@ -31,7 +31,7 @@ const Actors = (props) => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data);
-                setActors(data.slice(0, 4));
+                setActors(data.slice(0, 1));
                 console.log(actors);
             })
             .catch((err) => console.log('error occurred in execution', err));
