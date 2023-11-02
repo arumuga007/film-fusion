@@ -1,0 +1,1 @@
+export const imageNotFound = process.env.PUBLIC_URL + '/images/ImageNotFound.jpg';

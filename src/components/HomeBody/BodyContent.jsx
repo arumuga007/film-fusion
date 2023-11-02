@@ -3,11 +3,7 @@ import DefaultBodyContent from './BodyComponents/DefaultBodyContent';
 import SideBar from './SideBar';
 import styles from './../../style/BodyStyles/BodyContent.module.css';
 import GetMovies from './BodyComponents/GenreComponents/GetMovies';
-import MovieDetails from './MovieDetails/MovieDetails';
 import SearchResult from './BodyComponents/SearchResult/SearchResult';
-import PopularActors from '../Actors/PopularActors';
-import BornTodayActors from '../Actors/BornTodayActors';
-import Actor from './MovieDetails/Actor';
 import Actors from '../Actors/Actors';
 const BodyContent = () => {
   console.log('body content called');
@@ -16,7 +12,7 @@ const BodyContent = () => {
     <SideBar />
     <div className={styles.bodyContentContainer}>
       <Routes>
-        {/* <Route path="/" element={<DefaultBodyContent/>} /> */}
+        <Route path="/" element={<DefaultBodyContent/>} />
         <Route path="action-movies" element={<GetMovies category={"action"} key='action'/>} />
         <Route path="/horror-movies" element={<GetMovies category={"horror"} key='horror' />} />
         <Route path="/comedy-movies" element={<GetMovies category={"comedy"} key='comedy' />} />
