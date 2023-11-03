@@ -120,6 +120,7 @@
     transition: all linear .2s;
     border-radius: 10px;
     background: #101115;
+    cursor: pointer;
 }
 
 .popular-movie-image-container {

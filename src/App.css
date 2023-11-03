@@ -1,4 +1,11 @@
-
-.showMovieContainer {
-    top: 0;
+.popularMovies, .TopRatedMovies, .TopRatedTvShow {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    background: #101115;
+    padding: 10px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
 }

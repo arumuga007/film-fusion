@@ -5,6 +5,8 @@
     box-sizing: border-box;
     left:0;
     right: 0;
+    bottom: 0;
+    z-index: 1000;
     min-height: 100%;
     background: #19181E;
     display: flex;

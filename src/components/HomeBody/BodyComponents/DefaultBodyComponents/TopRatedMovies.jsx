@@ -1,7 +1,7 @@
 import MovieContainerTemplate from "./MovieContainerTemplate";
 const TopRatedMovies = () => {
     let url = 'https://imdb8.p.rapidapi.com/title/get-top-rated-movies';
-    let apikey = '5c366359camsh43c9051418019b5p107907jsnfeb44e3d70d1';
+    let apikey = '6ab8fdfa38msh4c9b648603dab30p1a3885jsn60dd6301c748';
     return(<MovieContainerTemplate url={url} className='toprated-movie-container' type='topRatedTvShows' apikey={apikey} />)
 }
 

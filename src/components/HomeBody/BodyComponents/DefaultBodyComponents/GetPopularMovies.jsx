@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import styles from "./../../../../style/BodyStyles/BodyContent.module.css";
 import DefaultSkeleton from "./DefaultSkeleton";
+import { movieDetailsContext } from "../GenreComponents/GetSingleMovieById";
+import MovieDetails from "../../MovieDetails/MovieDetails";
+import { changeToStatic } from "../DefaultBodyContent";
+
+
 const getSkeleton = () => {
     console.log('skeleton called');
     let itemsToReturn = [];
@@ -13,7 +18,9 @@ const getSkeleton = () => {
 const GetPopularMovies = (props) => {
     const [render, setRender] = useState(0);
     const [movie, setMovie] = useState(false);
-    const urls = `https://imdb8.p.rapidapi.com/title/get-details?tconst=${props.titleId}`;
+    const [showMovie, setShowMovie] = useState(false);
+    const urls = `https://imdb8.p.rapidapi.com/title/get-overview-details?tconst=${props.titleId}&currentCountry=US`;
+    let titleId = props.titleId;
 const options = {
 	method: 'GET',
 	headers: {
@@ -21,6 +28,16 @@ const options = {
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
 };
+
+    function scrollToTop() {
+        changeToStatic();
+        window.scrollTo({
+        top: 0,
+        behavior: "smooth" // This provides a smooth scrolling animation
+        });
+        setShowMovie(true);
+    }
+
     useEffect(() => {
         const timer = setTimeout(() => {
             fetch(urls, options)
@@ -43,17 +60,20 @@ const options = {
         <>
         {
             movie ?
-        <div className={styles['single-popular-movie-container']}>
+        <div className={styles['single-popular-movie-container']} onClick={() => scrollToTop()}>
             <div className={styles['popular-movie-image-container']}>
-            <img src={movie.image.url} className={styles['popular-movie-image']} />
+            <img src={movie.title.image.url} className={styles['popular-movie-image']} />
             </div>
             <div className={styles['popular-name-rating-container']}>
-                <div className={styles['popular-movie-title']}>{movie.title}</div>
+                <div className={styles['popular-movie-title']}>{movie.title.title}</div>
             </div>
         </div>
         :
         getSkeleton()
         }
+        <movieDetailsContext.Provider value={{movie, setShowMovie, titleId}}>
+            {showMovie && <MovieDetails />}
+        </movieDetailsContext.Provider>
         </>
     )
 }
