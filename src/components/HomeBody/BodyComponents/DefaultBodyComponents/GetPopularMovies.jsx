@@ -65,7 +65,11 @@ const options = {
             <img src={movie.title.image.url} className={styles['popular-movie-image']} />
             </div>
             <div className={styles['popular-name-rating-container']}>
-                <div className={styles['popular-movie-title']}>{movie.title.title}</div>
+                <div className={styles['popular-movie-title']}>{movie.title.title ? movie.title.title : 'Title not available'}</div>
+                <div className={styles['popular-rating-container']}>
+                    <i class="fa-solid fa-star"></i>
+                    {movie.ratings && <div className={styles['popular-movie-rating']}>{movie.ratings.rating ? movie.ratings.rating : ''}</div>}
+                </div>
             </div>
         </div>
         :

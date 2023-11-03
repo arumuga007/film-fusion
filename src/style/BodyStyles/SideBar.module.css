@@ -11,13 +11,11 @@
 .sidebarHeadline {
     color: white;
     font-size: 1.5rem;
-    font-weight: 650;
     padding: 5px 0px 10px 0px;
 }
 
 .sidebar > a {
     text-decoration: none;
-    color: gray;
+    opacity: .7;
     font-size: 1.2rem;
-    font-weight: 700;
 }

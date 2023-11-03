@@ -10,9 +10,9 @@ const Arrow = (props) => {
         if(totalWidth + 10 >= props.movieContainer.current.scrollWidth)
           rightArrow.current.style.display = 'none';
         else
-          rightArrow.current.style.display = 'block';
+          rightArrow.current.style.display = 'flex';
         if(props.movieContainer.current.scrollLeft > 0)
-            leftArrow.current.style.display = 'block';
+            leftArrow.current.style.display = 'flex';
         else 
             leftArrow.current.style.display = 'none';
     }
@@ -48,11 +48,11 @@ const Arrow = (props) => {
     
     return (
         <>
-            <div className={styles.rightArrowContainer}>
-                <i class="fa fa-angle-right" ref={rightArrow} ></i>
+            <div className={styles.rightArrowContainer} ref={rightArrow}>
+                <i class="fa fa-angle-right"  ></i>
             </div>
-            <div className={styles.leftArrowContainer}>
-                <i class="fa fa-angle-left" ref={leftArrow} className={styles.leftArrow}></i>
+            <div className={styles.leftArrowContainer} ref={leftArrow}>
+                <i class="fa fa-angle-left" className={styles.leftArrow}></i>
             </div>
         </>
     )
