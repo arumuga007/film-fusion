@@ -46,7 +46,15 @@ const GetSingleMovieById = (props) => {
                 <div className={styles['image-container']}>
                     <img src={movie.title.image ? movie.title.image.url : imageNotFound} className={styles.image} ></img>
                 </div>
+                <div className={styles['movie-name-rating-container']}>
                 <div className={styles.name}>{movie.title.title ? movie.title.title : 'Title not available'}</div>
+                {movie.ratings && <div className={styles['movie-rating-container']}>
+                    <i class="fa-solid fa-star"></i>
+                    <div className={styles['movie-rating']}>
+                    {movie.ratings.rating ? movie.ratings.rating : '0.0'}
+                    </div>
+                    </div>}
+                </div>
                 
             </div>
             : <div className={styles['single-movie-container']}><div className={styles.name}>sorry movie detail currently not available in server</div></div>
