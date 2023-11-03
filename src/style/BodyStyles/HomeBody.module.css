@@ -10,9 +10,11 @@
 body {
     overscroll-behavior-inline: contain;
     overscroll-behavior: contain;
+    background-color: #101115;
 }
 
 .homebody {
+    margin-top: 100px;
     display: flex;
     flex-direction: row;
     padding: 30px 40px;
@@ -22,4 +24,5 @@ body {
     min-height: 130vh;
     overscroll-behavior-inline: contain;
     overscroll-behavior: contain;
+    
 }

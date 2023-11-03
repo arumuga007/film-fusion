@@ -55,7 +55,7 @@ const moveMoviesLeft = () => {
                 return response.json();
             })
             .then((data) => {
-                movies = data.slice(0, 2);
+                movies = data.slice(0, 7);
                 console.log(movies);
                 setPopularMovies(movies);
             })
