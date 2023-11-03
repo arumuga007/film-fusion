@@ -38,7 +38,7 @@
 }
 .image-container {
   width: 40%;
-  max-width: 250px !important;
+  max-width: 210px !important;
   height: 300px;
   margin: 2px;
   position: relative;
@@ -227,17 +227,39 @@
     background: inherit;
 }
 
-.actor-image {
-    height: 150px;
-    width: 150px;
+.actor-image-container {
+    height: 120px;
+    width: 120px;
     border-radius: 50%;
-    background-position: center center !important;
+    overflow: hidden;
+    background-position: center !important;
     background-size: cover !important;
-    background-repeat: no-repeat !important;
+    background-repeat: repeat !important;
+    /* z-index: -1; */
+    backdrop-filter: blur(10px);
+    position: relative;
+}
+.actor-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+.actor-image {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 11;
 }
 
 .actor-name {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    opacity: .9;
 }
 
 /*actor details page css starts from here*/

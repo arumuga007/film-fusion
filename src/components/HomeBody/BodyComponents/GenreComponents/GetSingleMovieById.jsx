@@ -2,6 +2,7 @@ import { createContext, useContext, useEffect, useState } from 'react';
 import styles from './../../../../style/BodyStyles/GenreComponentStyle.module.css';
 import { getSkeleton } from './GetMovies';
 import MovieDetails from '../../MovieDetails/MovieDetails';
+import { imageNotFound } from '../../../../GlobalConstants/GlobalConstant';
 
 export const movieDetailsContext = createContext();
 export const useMyContext = () => useContext(movieDetailsContext);
@@ -41,13 +42,15 @@ const GetSingleMovieById = (props) => {
         <>
         {
             movie ? 
-             <div className={styles['single-movie-container']} onClick={() => scrollToTop()}>
+             (movie.title ? <div className={styles['single-movie-container']} onClick={() => scrollToTop()}>
                 <div className={styles['image-container']}>
-                    <img src={movie.title.image.url} className={styles.image} ></img>
+                    <img src={movie.title.image ? movie.title.image.url : imageNotFound} className={styles.image} ></img>
                 </div>
-                <div className={styles.name}>{movie.title.title}</div>
+                <div className={styles.name}>{movie.title.title ? movie.title.title : 'Title not available'}</div>
                 
             </div>
+            : <div className={styles['single-movie-container']}><div className={styles.name}>sorry movie detail currently not available in server</div></div>
+            )
             : getSkeleton()
             
         }

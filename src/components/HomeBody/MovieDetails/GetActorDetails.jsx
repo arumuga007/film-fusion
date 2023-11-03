@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import style from './../../../style/BodyStyles/MovieDetails.module.css';
 import { getActorSkeleton } from './Actor';
+import { imageNotFound } from '../../../GlobalConstants/GlobalConstant';
+
 const GetActorDetails = (props) => {
     const [actorDetails, setActorDetails] = useState(false);
     const [render, setRender] = useState(0);
@@ -24,8 +26,10 @@ const GetActorDetails = (props) => {
         {
             actorDetails ? 
                 <div className={style['single-actor-details']}>
-                    { actorDetails.image && <div className={style['actor-image']} style={{background: `url(${actorDetails.image.url})`}}></div>}
-                    <div className={style['actor-name']}>{actorDetails.name}</div>
+                    <div className={style['actor-image-container']} style={{background: `url(${actorDetails.image ? actorDetails.image.url : imageNotFound})`}}>
+                        <img src={actorDetails.image ? actorDetails.image.url : imageNotFound} className={style['actor-image']}></img>
+                    </div>
+                    {actorDetails.name && <div className={style['actor-name']}>{actorDetails.name}</div>}
                 </div>
             : getActorSkeleton()
         }

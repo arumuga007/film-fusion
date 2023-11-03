@@ -1,4 +1,5 @@
 import styles from './../../../style/BodyStyles/SubBody.module.css';
+import { imageNotFound } from '../../../GlobalConstants/GlobalConstant';
 import { getUpcomingMoviesSkeleton } from '../SubBody';
 import { useEffect, useState } from 'react';
 const UpcomingMovies = (props) => {
@@ -39,9 +40,9 @@ const UpcomingMovies = (props) => {
         ?
             <div className={styles.UpcomingMovieContainer}>
                 <div className={styles['upcoming-movie-image-container']}>
-                <img src={upcomingMovie.image.url} className={styles['upcoming-movie-image']} />
+                <img src={upcomingMovie.image ? upcomingMovie.image.url : imageNotFound} className={styles['upcoming-movie-image']} />
                 </div>
-                 <div className={styles['upcoming-movie-title']}>{upcomingMovie.title}</div>
+                 <div className={styles['upcoming-movie-title']}>{upcomingMovie.title ? upcomingMovie.title : 'Title not available'}</div>
                 <div className={styles['release-date']}>release date: {props.releaseDate}</div>
             </div>
 

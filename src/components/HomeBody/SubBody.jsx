@@ -42,7 +42,7 @@ const SubBody = () => {
                 ? upcomingMovie.map((movieTitle, index) => {
                     timeOut += 500;
                     let title = movieTitle.id.split('/')[2];
-                    return <UpcomingMovies title={title} releaseDate={movieTitle.releaseDate} timeOut={timeOut} key={index}/>
+                    return <UpcomingMovies title={title} releaseDate={movieTitle.releaseDate ? movieTitle.releaseDate : 'coming soon'} timeOut={timeOut} key={index}/>
                 })
                 : getUpcomingMoviesSkeleton()
             }

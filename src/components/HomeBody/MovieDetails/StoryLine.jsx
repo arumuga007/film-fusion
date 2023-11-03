@@ -5,7 +5,7 @@ const StoryLine = () => {
     return (
         <div className={style['story-line-container']}>
             <div className={style['story-line-header']}>StoryLine</div>
-            <div className={style['story-line-content']}>{movie.plotSummary.text}</div>
+            <div className={style['story-line-content']}>{movie.plotSummary ? movie.plotSummary.text : 'Storyline not availble'}</div>
         </div>
     )
 }

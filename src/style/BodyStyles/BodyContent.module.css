@@ -17,6 +17,7 @@
     padding: 10px 10px;
     gap: 40px;
     position: relative;
+    min-height: 180vh;
     box-sizing: border-box;
     overflow: hidden;
     transition: all linear .3s;
