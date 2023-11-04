@@ -11,7 +11,7 @@ export const getSkeleton = () => {
 }
 
 const GetMovies = (props) => {
-    const url = `https://imdb8.p.rapidapi.com/title/v2/get-popular-movies-by-genre?genre=${props.category}&limit=7`;
+    const url = `https://imdb8.p.rapidapi.com/title/v2/get-popular-movies-by-genre?genre=${props.category}&limit=4`;
     const options = {
         method: 'GET',
         headers: {

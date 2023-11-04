@@ -49,7 +49,7 @@ const Actor = () => {
         fetch(url, options)
         .then((res) => res.json())
         .then((data) => {
-            setActor(data.slice(0,4));
+            setActor(data.slice(0,1));
         })
         .catch((err) => console.log('error occured in getting actor name id in movie overview page', err));
     }, []);

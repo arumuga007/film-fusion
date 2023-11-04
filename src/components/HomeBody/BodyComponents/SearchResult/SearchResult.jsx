@@ -37,7 +37,7 @@ const SearchResult = () => {
             }
             setNoResultFound(false);
             if(data.results.length >= 4)
-                setTitleIds(data.results.slice(0, 7));
+                setTitleIds(data.results.slice(0, 4));
             else if(data.results)
                 setTitleIds(data.results);
         })

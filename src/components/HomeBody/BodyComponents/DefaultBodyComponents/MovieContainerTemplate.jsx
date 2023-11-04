@@ -31,7 +31,7 @@ const MovieContainerTemplate = (props) => {
             fetch(props.url, options)
             .then((response) => response.json())
             .then((data) => {
-                setMovies(data.slice(0,7));
+                setMovies(data.slice(0,1));
             })
             .catch((err) => {
             console.log('error occured during fetching a data in moviecontainertemplate');

@@ -6,7 +6,7 @@ const HomeBody = () => {
     return (
     <div className={styles.homebody}>
         <BodyContent />
-        {/* <SubBody /> */}
+        
         </div>
     )
 }

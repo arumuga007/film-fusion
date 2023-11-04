@@ -15,7 +15,7 @@ const getSkeleton = () => {
     return itemsToReturn
 }
 const PopularMovies = () => {
-let apikey = '987a570bf1msh6f36186def0d287p1ecec3jsnb5d0bbed0445';
+let apikey = '6ab8fdfa38msh4c9b648603dab30p1a3885jsn60dd6301c748';
 const url = 'https://imdb8.p.rapidapi.com/title/get-most-popular-movies?homeCountry=US&purchaseCountry=US&currentCountry=US';
 const options = {
 	method: 'GET',
@@ -55,7 +55,7 @@ const moveMoviesLeft = () => {
                 return response.json();
             })
             .then((data) => {
-                movies = data.slice(0, 7);
+                movies = data.slice(0, 4);
                 console.log(movies);
                 setPopularMovies(movies);
             })

@@ -8,8 +8,18 @@
     background: linear-gradient(transparent 0%, #E743BD 5%, #BD43E7 70%, #BD43E7 95%, transparent 99%);
     border-radius: 15px;
 }
+
+.content-subody-container {
+    width: 74%;
+    padding: 30px 2px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
 .bodyContentContainer {
-    width: 50%;
+    box-sizing: border-box;
+    width: 68.5%;
     background: #19181E;
     box-shadow: 0px 0px 2px 0px gray;
     display: flex;
@@ -207,4 +217,14 @@
 
 .popular-movie-rating {
     opacity: .7;
+}
+
+/*For tab width starts*/
+@media (max-width: 950px) {   
+.content-subody-container {
+    flex-direction: column;
+}
+.bodyContentContainer {
+    width: 100%;
+}
 }

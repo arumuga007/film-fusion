@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from './../../style/BodyStyles/SubBody.module.css';
 import UpcomingMovies from './SubBody/UpcomingMovies';
 import UpcomingMoviesSkeleton from './SubBody/UpcomingMoviesSkeleton';
+import Arrow from './BodyComponents/DefaultBodyComponents/Arrow';
 
 export const getUpcomingMoviesSkeleton = () => {
     let itemsToReturn = [];
@@ -13,16 +14,43 @@ export const getUpcomingMoviesSkeleton = () => {
 
 const SubBody = () => {
     let timeOut = 0;
+    let parentReference = useRef();
+    let leftValue = 0;
+    const [showArrow , setShowArrow] = useState(false);
     const [upcomingMovie, setUpcomingMovie] = useState(false);
     const url = 'https://imdb8.p.rapidapi.com/title/get-coming-soon-movies?homeCountry=US&purchaseCountry=US&currentCountry=US';
     const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '59689d85b6msh26ad0cac83f8cb3p1c0870jsn5b6b9821a000',
+		'X-RapidAPI-Key': '6ab8fdfa38msh4c9b648603dab30p1a3885jsn60dd6301c748',
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
 };
+const moveMovies = () => {
+    leftValue = parentReference.current.scrollLeft + 270;
+    parentReference.current.scrollTo({
+        left: leftValue,
+        behavior: "smooth"
+      });    
+}
+
+const moveMoviesLeft = () => {
+    leftValue = parentReference.current.scrollLeft - 270;
+    parentReference.current.scrollTo({
+        left: leftValue,
+        behavior: "smooth"
+      });
+}
+
+const toggleArrow = () => {
+    if(window.innerWidth <= 950)
+        setShowArrow(true);
+    else
+        setShowArrow(false);
+}
     useEffect(() => {
+        window.addEventListener('resize', toggleArrow);
+        toggleArrow();
         fetch(url, options)
         .then(response => response.json())
         .then((data) => {
@@ -32,11 +60,15 @@ const SubBody = () => {
         .catch((error) => {
             console.log('error occured during fetching a title Id  for upcoming movies', error);
         })
+        return() => {
+            window.removeEventListener('resize', toggleArrow);
+        }
     }, []);
 
     return (
         <div className={styles['sub-body']}>
             <div className={styles.upcomingMoviesHeader}>Upcoming Movies</div>
+            <div className={styles['upcoming-movies-container']} ref={parentReference}>
             {
                 upcomingMovie
                 ? upcomingMovie.map((movieTitle, index) => {
@@ -46,6 +78,8 @@ const SubBody = () => {
                 })
                 : getUpcomingMoviesSkeleton()
             }
+            </div>
+            { showArrow && <Arrow moveMovies={moveMovies} moveMoviesLeft={moveMoviesLeft} movieContainer={parentReference} />}
         </div>
     )
 }

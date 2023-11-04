@@ -5,11 +5,14 @@ import styles from './../../style/BodyStyles/BodyContent.module.css';
 import GetMovies from './BodyComponents/GenreComponents/GetMovies';
 import SearchResult from './BodyComponents/SearchResult/SearchResult';
 import Actors from '../Actors/Actors';
+import SubBody from './SubBody';
+
 const BodyContent = () => {
   console.log('body content called');
   return (
     <>
     <SideBar />
+    <div className={styles['content-subody-container']}>
     <div className={styles.bodyContentContainer}>
       <Routes>
         <Route path="/" element={<DefaultBodyContent/>} />
@@ -27,6 +30,8 @@ const BodyContent = () => {
         <Route path='/popular-actors' element = {<Actors type={'popularActors'} />} key='popularActors' />
         <Route path='/born-today-actors' element = {<Actors type={'bornTodayActors'} />} key='bornTodayActors' />
       </Routes>
+      </div>
+      <SubBody />
       </div>
     </>
   );

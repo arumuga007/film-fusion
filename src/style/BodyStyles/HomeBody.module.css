@@ -14,13 +14,14 @@ body {
 }
 
 .homebody {
+    box-sizing: border-box;
     margin-top: 100px;
     display: flex;
     flex-direction: row;
-    padding: 30px 40px;
+    padding: 0px 0px;
     width: 100%;
     background: #101115;
-    gap: 25px;
+    justify-content: space-around;
     min-height: 130vh;
     overscroll-behavior-inline: contain;
     overscroll-behavior: contain;

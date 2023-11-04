@@ -9,7 +9,7 @@ const UpcomingMovies = (props) => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '59689d85b6msh26ad0cac83f8cb3p1c0870jsn5b6b9821a000',
+            'X-RapidAPI-Key': '6ab8fdfa38msh4c9b648603dab30p1a3885jsn60dd6301c748',
             'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
         }
     };
