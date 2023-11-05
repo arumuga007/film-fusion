@@ -69,19 +69,22 @@
     box-sizing: border-box;
     height: 85%;
     width: 100%;
-    background: #19181E;
+    background-color: black;
     padding: 20px 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0px 0px 4px 0px rgba(256, 256, 256, .2);
-    animation: animateSkeleton 1s linear infinite;
+    border-radius: 10px;
+    box-shadow: 0px 0px 14px 0px rgba(17, 0, 92, .5);
+    
 }
 
 .skeletonImage {
     height: 70%;
     width: 100%;
-    background: #424242;
+    border-radius: 10px;
+    background: linear-gradient(to right bottom,transparent 0%, #11005C 3%, #020066 25%, #5221B0 80%, #5221B0 97%, transparent 100%);
+    animation: animateSkeleton 1s linear infinite;
 }
 
 .nameAndRatingContainer {
@@ -94,15 +97,19 @@
 }
 
 .skeletonName {
-    height: 50%;
+    height: 40%;
     width: 50%;
-    background: #595959;
+    border-radius: 10px;
+    background: linear-gradient(to right,#11005C 0%, #020066 50%, #5221B0 80%);
+    animation: animateSkeleton 1s linear infinite;
 }
 
 .skeletonRating {
     height: 40%;
+    border-radius: 5px;
     width: 20%;
-    background: #595959;
+    background: linear-gradient(to right,#11005C 0%, #020066 50%, #5221B0 80%);
+    animation: animateSkeleton 1s linear infinite;
 }
 
 @keyframes animateSkeleton {
@@ -111,7 +118,7 @@
         opacity: 1;
     }
     50% {
-        opacity: .5;
+        opacity: .7;
     }
     100% {
         opacity: 1;
@@ -227,4 +234,10 @@
 .bodyContentContainer {
     width: 100%;
 }
+}
+
+@media (max-width: 700px) {
+    .content-subody-container {
+        width: 100%;
+    }
 }

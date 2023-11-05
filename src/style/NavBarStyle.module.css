@@ -28,7 +28,7 @@
     box-sizing: border-box;
     padding: 0px 10px;
     overflow: hidden;
-    width: 40%;
+    width: max(40%, 400px);
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -53,7 +53,7 @@
 }
 .icon-container{
     position: absolute;
-    right: 30px;
+    right: 40px;
     font-size: 27px;
     padding-top: 5px;
     align-self: center;
@@ -104,11 +104,38 @@
     z-index: 10;
     transition: all linear .3s;
 }
-
+.active-menu::before {
+    background-color: rgba(256, 256, 256, .6) !important;
+}
 .menu-item:hover::before {
-    width: 90% !important;
+    width: calc(100% - 25px) !important;
 }
 
 .active-menu {
     color: #BD43E7;
+}
+
+@media (max-width: 700px) {
+    .navbar-container {
+        box-sizing: content-box;
+        justify-content: space-around;
+        height: 70px;
+        padding: 10px;
+        font-size: 1.4rem;;
+    }
+    .searchbar-container {
+        height: 100%;
+        width: max(80%, 500px);
+    }
+    .invalid-input {
+        display: none;
+    }
+    .searchbar {
+        box-sizing: border-box;
+        padding: 0px 5px;
+        height: 70%;
+    }
+    .menu-container {
+        display: none;
+    }
 }

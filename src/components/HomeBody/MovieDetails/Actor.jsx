@@ -9,7 +9,7 @@ export const getActorSkeleton = () => {
     const itemToReturn = [];
     for(let i = 0; i < 5; i++) {
         console.log('called', i);
-        itemToReturn.push(<GetActorSkeleton />)
+        itemToReturn.push(<GetActorSkeleton key={i}/>)
     }
     return itemToReturn;
 }

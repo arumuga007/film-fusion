@@ -3,6 +3,7 @@ import HomeBody from './components/HomeBody/HomeBody';
 import Navbar from './components/Navbar/Navbar';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import UpcomingFeatures from './components/UpcomingFeatures/UpcomingFeatures';
+import MobileNavBar from './components/MobileNavBar/MobileNavBar';
 //import UseEffectExample from './components/UseEffectExample';
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path="/watch-list" element={<UpcomingFeatures />} />
             <Route path="/profile" element={<UpcomingFeatures />} />
       </Routes>
+      <MobileNavBar />
       </BrowserRouter>
     </div>
   );
