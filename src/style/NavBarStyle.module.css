@@ -121,7 +121,11 @@
         justify-content: space-around;
         height: 70px;
         padding: 10px;
+        box-shadow: 0px 0px 5px 0px rgba(189, 43, 231, 0.8);
         font-size: 1.4rem;;
+    }
+    .logo-container {
+        min-width: 90px;
     }
     .searchbar-container {
         height: 100%;
@@ -138,4 +142,5 @@
     .menu-container {
         display: none;
     }
+
 }

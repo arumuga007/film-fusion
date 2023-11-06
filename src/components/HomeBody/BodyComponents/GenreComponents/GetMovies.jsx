@@ -11,11 +11,11 @@ export const getSkeleton = () => {
 }
 
 const GetMovies = (props) => {
-    const url = `https://imdb8.p.rapidapi.com/title/v2/get-popular-movies-by-genre?genre=${props.category}&limit=4`;
+    const url = `https://imdb8.p.rapidapi.com/title/v2/get-popular-movies-by-genre?genre=${props.category}&limit=2`;
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '987a570bf1msh6f36186def0d287p1ecec3jsnb5d0bbed0445',
+            'X-RapidAPI-Key': '92aeafde89msh695189c171337d3p14b571jsnc34752824632',
             'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
         }
     };

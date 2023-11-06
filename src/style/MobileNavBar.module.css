@@ -12,10 +12,9 @@
         bottom: 0;
         z-index: 1000;
         height: 70px;
-        box-shadow: 0px 0px 5px 0px rgba(189, 43, 231, 0.2);
+        box-shadow: 0px 0px 5px 0px rgba(189, 43, 231, 0.7);
         border-radius: 20px 20px 0px 0px;
         background-color: black;
-        
     }
     .navbar-items {
         display: flex;

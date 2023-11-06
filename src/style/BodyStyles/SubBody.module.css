@@ -65,7 +65,7 @@
 }
 
 .UpcomingMovieContainer {
-    align-self: center;
+    align-self: flex-start;
     height: auto;
     box-sizing: border-box;
     width: 90%;

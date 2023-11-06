@@ -55,7 +55,7 @@ const toggleArrow = () => {
         .then(response => response.json())
         .then((data) => {
             console.log(data);
-            setUpcomingMovie(data.slice(0,5));
+            setUpcomingMovie(data.slice(0,1));
         })
         .catch((error) => {
             console.log('error occured during fetching a title Id  for upcoming movies', error);
