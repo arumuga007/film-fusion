@@ -14,14 +14,14 @@
     height: 400px;
     margin-top: 5%;
     width: 30%;
-    background: #19181E;
+    background: black;
     min-width: 250px;
     padding: 1%;
     display: flex;
     flex-direction: column;
     gap: 10%;
     box-shadow: 0px 0px 4px 0px rgba(256, 256, 256, .2);
-    animation: animateSkeleton 1s linear infinite;
+    
 }
 
 
@@ -31,7 +31,7 @@
         opacity: 1;
     }
     50% {
-        opacity: .5;
+        opacity: .7;
     }
     100% {
         opacity: 1;
@@ -41,13 +41,15 @@
 .skeleton-image {
     width: 100%;
     height: 70%;
-    background: #595959;
+    background: linear-gradient(to right bottom,transparent 0%, #11005C 3%, #020066 25%, #5221B0 80%, #5221B0 97%, transparent 100%);
+    animation: animateSkeleton 1s linear infinite;
 }
 
 .skeleton-name {
     height: 10%;
     width: 80%;
-    background: #595959;
+    background: linear-gradient(to right bottom,transparent 0%, #11005C 3%, #020066 25%, #5221B0 80%, #5221B0 97%, transparent 100%);
+    animation: animateSkeleton 1s linear infinite;
 }
 
 .single-movie-container {
@@ -127,6 +129,10 @@
     .get-movie-container {
         padding: 0px;
         gap: 2%;
+    }
+    .skeleton-container {
+        width: 46%;
+        min-width: 0px;
     }
     .single-movie-container {
         min-height: 330px;
