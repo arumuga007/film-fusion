@@ -255,7 +255,6 @@
     }
     .popular-movie-image-container {
         height: 250px;
-        grid-auto-columns: 180px;
     }
     .popular-name-rating-container {
         height: calc(100% - 270px);

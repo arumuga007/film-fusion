@@ -16,6 +16,19 @@
     overflow: hidden;
     position: relative;
     box-shadow: 0px 0px 3px rgba(256,256,256,.3);
+    opacity: .3;
+    transform: translateY(-40px);
+    animation: showItem 0.3s linear .2s forwards;
+}
+@keyframes showItem {
+    50% {
+        opacity: .5;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
 }
 .category-item img {
     /* height: auto;
@@ -43,7 +56,7 @@
     position: relative;
     transform: translateX(-50%);
     opacity: 0;
-    animation: showTitle .3s 1s linear forwards;
+    animation: showTitle .3s .5s linear forwards;
 }
 @keyframes showTitle {
     50% {
@@ -64,8 +77,9 @@
     font-weight: 300;
     transform: translate(-15px, -15px);
     transition: all linear .3s;
-    animation: showDescription .3s 1s linear forwards;
+    animation: showDescription .3s .8s linear forwards;
     opacity: 0;
+    text-wrap: wrap;
 }
 @keyframes showDescription {
     50% {
