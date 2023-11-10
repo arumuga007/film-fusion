@@ -20,6 +20,7 @@
     flex-direction: column;
     width: 100%;
     gap: 30px;
+    margin-bottom: 20px;
 }
 
 .UpcomingMoviesSkeleton {
@@ -106,6 +107,7 @@
     width: 100%;
     flex-direction: column;
     justify-content: space-between;
+    margin-bottom: 40px;
 }
 .upcomingMoviesHeader {
     padding: 0px 20px;
@@ -126,5 +128,8 @@
 .upcoming-movies-container::-webkit-scrollbar {
     height: 0px;
     width: 0px;
+}
+.release-date {
+    font-size: .9rem;
 }
 }

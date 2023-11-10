@@ -14,14 +14,14 @@ const SearchResult = () => {
     const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '987a570bf1msh6f36186def0d287p1ecec3jsnb5d0bbed0445',
+		'X-RapidAPI-Key': '92aeafde89msh695189c171337d3p14b571jsnc34752824632',
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
     };
     const actorOptions = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '987a570bf1msh6f36186def0d287p1ecec3jsnb5d0bbed0445',
+            'X-RapidAPI-Key': '92aeafde89msh695189c171337d3p14b571jsnc34752824632',
             'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
         }
     };
@@ -42,7 +42,6 @@ const SearchResult = () => {
                 setTitleIds(data.results);
         })
     }, [searchValue]);
-
     if(noResultFound)
         return <NoMatchFound />
 

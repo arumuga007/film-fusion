@@ -53,7 +53,7 @@ const MovieOverview = () => {
                     movie.genres.map((genre, index) => {
                     if(noOfGenre)
                         return;
-                    if(index >= 2)
+                    if(index >= 1)
                         noOfGenre = true;
                       return <div className={styles['genre-item']} key={index}>
                         {genre}

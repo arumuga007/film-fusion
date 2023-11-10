@@ -237,7 +237,6 @@
     background-position: center !important;
     background-size: cover !important;
     background-repeat: repeat !important;
-    /* z-index: -1; */
     backdrop-filter: blur(10px);
     position: relative;
 }
@@ -282,4 +281,50 @@
     padding: 10px 17px;
     background: gray;
     border-radius: 20px;
+}
+
+@media (max-width: 700px) {
+    .image-container {
+        width: 50%;
+        height: 270px;
+    }
+    .movie-title {
+        font-weight: 400;
+        font-size: 1.4rem;
+    }
+    .rating-text-container {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    .movie-genre-container {
+        gap: 10px;
+    }
+    .story-line-header {
+        font-weight: 400;
+        font-size: 1.4rem;
+    }
+    .story-line-content {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+    .actor-header {
+        font-weight: 400;
+        font-size: 1.4rem;
+    }
+    .actor-details-container {
+        grid-auto-columns: 150px;
+    }
+    .actor-name {
+        font-size: 1rem;
+    }
+}
+
+@media(max-width: 700px) {
+    .dob-location-container {
+        gap: 10px;
+    }
+    .location-container {
+        display: none;
+    }
+    
 }
