@@ -15,12 +15,12 @@ const getSkeleton = () => {
     return itemsToReturn
 }
 const PopularMovies = () => {
-let apikey = '92aeafde89msh695189c171337d3p14b571jsnc34752824632';
+let apikey = 'd92540368emshd095ea53a9a4ad0p16931fjsn1572d4bc284b';
 const url = 'https://imdb8.p.rapidapi.com/title/get-most-popular-movies?homeCountry=US&purchaseCountry=US&currentCountry=US';
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '92aeafde89msh695189c171337d3p14b571jsnc34752824632',
+		'X-RapidAPI-Key': 'd92540368emshd095ea53a9a4ad0p16931fjsn1572d4bc284b',
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
 };
@@ -57,7 +57,7 @@ const moveMoviesLeft = () => {
             .then((data) => {
                 movies = data.slice(0, 4);
                 console.log(movies);
-                // setPopularMovies(movies);
+                setPopularMovies(movies);
             })
             .catch((error) => {
                 console.log(error);

@@ -11,24 +11,28 @@ export const getSkeleton = () => {
 }
 
 const GetMovies = (props) => {
-    const url = `https://imdb8.p.rapidapi.com/title/v2/get-popular-movies-by-genre?genre=${props.category}&limit=2`;
+    const url = `https://imdb8.p.rapidapi.com/title/v2/get-popular-movies-by-genre?genre=${props.category}&limit=5`;
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '92aeafde89msh695189c171337d3p14b571jsnc34752824632',
+            'X-RapidAPI-Key': '5c366359camsh43c9051418019b5p107907jsnfeb44e3d70d1',
             'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
         }
     };
     const [movies, setMovies] = useState(false);
+    const [datafetched, setDataFetched] = useState(0);
     let timeOut = 0;
     useEffect(() => {
         fetch(url, options)
         .then(response => response.json())
         .then((data) => {
-            console.log(data);
+        if(data.message) {
+            setDataFetched(datafetched + 1);
+            return;
+        }
         setMovies(data);
         })
-    }, []);
+    }, [datafetched]);
 
     return(
         <div className={styles['get-movie-container']} >

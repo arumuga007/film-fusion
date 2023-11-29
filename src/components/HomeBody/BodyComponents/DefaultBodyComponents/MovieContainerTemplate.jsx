@@ -35,6 +35,7 @@ const MovieContainerTemplate = (props) => {
             })
             .catch((err) => {
             console.log('error occured during fetching a data in moviecontainertemplate');
+            console.log(err);
             setMovieFetched(moviefetched + 1);
             });
         }, 1000);

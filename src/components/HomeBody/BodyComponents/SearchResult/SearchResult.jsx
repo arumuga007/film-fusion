@@ -14,14 +14,14 @@ const SearchResult = () => {
     const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '92aeafde89msh695189c171337d3p14b571jsnc34752824632',
+		'X-RapidAPI-Key': 'ab9812db4emshea295be64618310p18f90ejsn0399c2bad76e',
 		'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
 	}
     };
     const actorOptions = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '92aeafde89msh695189c171337d3p14b571jsnc34752824632',
+            'X-RapidAPI-Key': 'ab9812db4emshea295be64618310p18f90ejsn0399c2bad76e',
             'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
         }
     };

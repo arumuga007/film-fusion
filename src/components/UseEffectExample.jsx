@@ -9,7 +9,7 @@ const options = {
 	}
 };
 const UseEffectExample = () => {
-
+    
     const [data, setData] = useState('');
     useEffect(() => {
         fetch(url, options)

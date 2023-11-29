@@ -92,7 +92,9 @@
 .profile-container i:hover {
     color: #BD43E7;
 }
-
+i {
+    overflow: hidden;
+}
 .menu-item::before {
     content: '';
     position: absolute;
@@ -139,11 +141,13 @@
         padding: 0px 5px;
         height: 70%;
         color: #BD43E7;
+        overflow: hidden;
     }
     .menu-container {
         display: none;
     }
     .icon-container i{
         color: #BD43E7;
+        overflow: hidden;
     }
 }

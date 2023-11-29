@@ -1,7 +1,15 @@
 import { Link } from 'react-router-dom';
-import styles from './../../style/MobileNavBar.module.css'
+import styles from './../../style/MobileNavBar.module.css';
+import { useEffect } from 'react';
+
 
 const MobileNavBar = () => {
+
+    useEffect((() => {
+        // let navItems = window.document.querySelectorAll('.MobileNavBar_navbar-items__JncE\+');
+        // console.log('navitem', navItems);
+    }), [])
+    
 
     return (
         <div className={styles['mobile-navbar-container']}>
