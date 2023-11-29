@@ -7,18 +7,13 @@ const MobileNavBar = () => {
   const [activeMenu, setActiveMenu] = useState('');
 
   useEffect(() => {
-    // Extract the pathname from the location object
     const currentPath = location.pathname;
-
-    // Map the paths to corresponding menu names
     const pathToMenuMap = {
       '/film-fusion/': 'home',
       '/categories': 'categories',
       '/watch-list': 'watch-list',
       '/profile': 'profile',
     };
-
-    // Set the active menu based on the current path
     setActiveMenu(pathToMenuMap[currentPath] || '');
 
   }, [location.pathname]);

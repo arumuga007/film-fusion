@@ -36,8 +36,8 @@ const SearchResult = () => {
                 return;
             }
             setNoResultFound(false);
-            if(data.results.length >= 4)
-                setTitleIds(data.results.slice(0, 4));
+            if(data.results.length >= 8)
+                setTitleIds(data.results.slice(0, 8));
             else if(data.results)
                 setTitleIds(data.results);
         })

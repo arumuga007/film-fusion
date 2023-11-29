@@ -25,7 +25,7 @@ const UpcomingMovies = (props) => {
                     setUpcomingMovie(data);
                 } catch (error) {
                     setRender(render + 1);
-                    console.error('Error occurred while getting upcoming movie details', error);
+                    // console.error('Error occurred while getting upcoming movie details', error);
                 }
             };
         

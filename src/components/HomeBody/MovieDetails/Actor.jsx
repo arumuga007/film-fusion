@@ -8,7 +8,7 @@ import Arrow from '../BodyComponents/DefaultBodyComponents/Arrow';
 export const getActorSkeleton = () => {
     const itemToReturn = [];
     for(let i = 0; i < 5; i++) {
-        console.log('called', i);
+        // console.log('called', i);
         itemToReturn.push(<GetActorSkeleton key={i}/>)
     }
     return itemToReturn;
@@ -21,7 +21,7 @@ const Actor = () => {
     const options = {
         method: 'GET',
         headers: {
-            'X-RapidAPI-Key': '92aeafde89msh695189c171337d3p14b571jsnc34752824632',
+            'X-RapidAPI-Key': '59689d85b6msh26ad0cac83f8cb3p1c0870jsn5b6b9821a000',
             'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
         }
     };

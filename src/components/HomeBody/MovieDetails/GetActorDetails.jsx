@@ -12,11 +12,11 @@ const GetActorDetails = (props) => {
             fetch(url, props.options)
             .then(res => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setActorDetails(data);
             })
             .catch((err) => {
-                console.log('error occured in fetching a actor details for movie overview page', err);
+                // console.log('error occured in fetching a actor details for movie overview page', err);
                 setRender(render + 1);
             })
         }, props.timeOut)

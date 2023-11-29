@@ -44,12 +44,12 @@ const options = {
             .then((response) => response.json())
             .then((data) => {
                 if(data.message) {
-                    console.log(data.message);
+                    // console.log(data.message);
                     setRender(render + 1);
                     return;
                 }
                 setMovie(data);
-                console.log(data);
+                // console.log(data);
             })
             .catch((error) => console.log(error))
             

@@ -23,11 +23,11 @@ const GetActor = (props) => {
             fetch(url, props.options)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                // console.log(data);
                 setActorDetail(data);
             })
             .catch((err) => {
-                console.log('error occured in fetching actor details', err);
+                // console.log('error occured in fetching actor details', err);
                 setDataFetched((dataFetched) => dataFetched + 1)
 
             })

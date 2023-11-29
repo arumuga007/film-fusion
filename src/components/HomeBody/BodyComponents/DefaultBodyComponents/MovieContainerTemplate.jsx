@@ -5,7 +5,7 @@ import Arrow from "./Arrow";
 import GetPopularMovies from "./GetPopularMovies";
 
 const getskeleton = () => {
-    console.log('skeleton called');
+    // console.log('skeleton called');
     let itemsToReturn = [];
     for(let i = 0; i < 10; i ++) {
         itemsToReturn.push(<DefaultSkeleton key={i} />)
@@ -31,11 +31,11 @@ const MovieContainerTemplate = (props) => {
             fetch(props.url, options)
             .then((response) => response.json())
             .then((data) => {
-                setMovies(data.slice(0,1));
+                setMovies(data.slice(0,8));
             })
             .catch((err) => {
-            console.log('error occured during fetching a data in moviecontainertemplate');
-            console.log(err);
+            // console.log('error occured during fetching a data in moviecontainertemplate');
+            // console.log(err);
             setMovieFetched(moviefetched + 1);
             });
         }, 1000);

@@ -55,12 +55,12 @@ const moveMoviesLeft = () => {
                 return response.json();
             })
             .then((data) => {
-                movies = data.slice(0, 4);
-                console.log(movies);
+                movies = data.slice(0, 8);
+                // console.log(movies);
                 setPopularMovies(movies);
             })
             .catch((error) => {
-                console.log(error);
+                // console.log(error);
                 setDataFetched(datafetched + 1);
             })
         }, 1000)

@@ -26,11 +26,11 @@ const GetSingleMovieById = (props) => {
             .then(response => response.json())
             .then((data) => {
                 if(data.message) {
-                    console.log(data.message);
+                    // console.log(data.message);
                     setRender(render + 1);
                     return;
                 }
-                console.log(data);
+                // console.log(data);
                 setMovie(data);
             })
             .catch(err => console.log(err));
