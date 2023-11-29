@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/film-fusion/static/css/main.8197ccbe.css",
-    "main.js": "/film-fusion/static/js/main.86fa89cd.js",
+    "main.css": "/film-fusion/static/css/main.b3daa106.css",
+    "main.js": "/film-fusion/static/js/main.4b8638bf.js",
     "static/js/787.e577274b.chunk.js": "/film-fusion/static/js/787.e577274b.chunk.js",
     "index.html": "/film-fusion/index.html",
-    "main.8197ccbe.css.map": "/film-fusion/static/css/main.8197ccbe.css.map",
-    "main.86fa89cd.js.map": "/film-fusion/static/js/main.86fa89cd.js.map",
+    "main.b3daa106.css.map": "/film-fusion/static/css/main.b3daa106.css.map",
+    "main.4b8638bf.js.map": "/film-fusion/static/js/main.4b8638bf.js.map",
     "787.e577274b.chunk.js.map": "/film-fusion/static/js/787.e577274b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8197ccbe.css",
-    "static/js/main.86fa89cd.js"
+    "static/css/main.b3daa106.css",
+    "static/js/main.4b8638bf.js"
   ]
 }
