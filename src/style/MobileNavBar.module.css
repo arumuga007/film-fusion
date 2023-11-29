@@ -45,12 +45,6 @@
         transition: all linear .3s;
         z-index: 100000;
     }
-    .navbar-items:hover i {
-        color: #BD43E7;
-    }
-    .navbar-items:hover::before {
-        width: 100%;
-    }
     .ball-container {
         position: fixed;
         bottom: 40px;
@@ -58,5 +52,11 @@
         width: 70px;
         background-color: blue;
         z-index: 10000;
+    }
+    .active::before {
+        width: 100%;
+    }
+    .active i {
+        color: #BD43E7;
     }
 }
